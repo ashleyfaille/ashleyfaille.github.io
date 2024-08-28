@@ -9,28 +9,287 @@
   <title>Fullscreen Navbar - Snippets | Front - Multipurpose Responsive Template</title>
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="@@autopath/favicon.ico">
+  <link rel="shortcut icon" href="../favicon.ico">
 
   <!-- Font -->
-  <link href="@@vars.themeFont" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- CSS Implementing Plugins -->
-  <!-- bundlecss:vendor [@@autopath] -->
-  <link rel="stylesheet" href="@@autopath/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
 
   <!-- CSS Front Template -->
-  <!-- bundlecss:theme [@@autopath] @@vars.version -->
-  <link rel="stylesheet" href="@@autopath/assets/css/theme.css">
-  <link rel="stylesheet" href="@@autopath/assets/css/snippets.css">
+  <link rel="stylesheet" href="../assets/css/theme.min.css">
+  <link rel="stylesheet" href="../assets/css/snippets.min.css">
 </head>
 
 <body>
   <!-- ========== HEADER ========== -->
-  @@include("@@autopath/partials/navbar/fullscreen.html", {
-    "category": "",
-    "subcategory": "",
-    "link": ""
-  })
+  <header id="header" class="navbar navbar-expand navbar-dark navbar-fullscreen">
+    <nav class="container">
+      <!-- Default Logo -->
+      <a class="navbar-brand" href="../index.html" aria-label="Front">
+        <img class="navbar-brand-logo" src="../assets/svg/logos/logo-white.svg" alt="Logo">
+      </a>
+      <!-- End Default Logo -->
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarFullscreenNav" aria-controls="navbarFullscreenNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-default">
+          <i class="bi-list"></i>
+        </span>
+        <span class="navbar-toggler-toggled">
+          <i class="bi-x"></i>
+        </span>
+      </button>
+      <!-- End Toggler -->
+
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="navbarFullscreenNav">
+        <div class="container">
+          <div class="navbar-fullscreen-scroller">
+            <div class="row justify-content-md-between align-items-md-center">
+              <div class="col-md-6">
+                <!-- Collapse -->
+                <ul class="navbar-nav" id="navbarNavCollapse">
+                  <!-- Landings -->
+                  <li class="nav-item">
+                    <a class="nav-link collapsed " href="#" role="button" data-bs-toggle="collapse" data-bs-target="#landingsCollapse" aria-expanded="false" aria-controls="landingsCollapse">Landings</a>
+
+                    <div id="landingsCollapse" class="navbar-fullscreen-collapse collapse" data-bs-parent="#navbarNavCollapse">
+                      <div id="landingsNavCollapse">
+                        <!-- Classic -->
+                        <div class="nav-item">
+                          <a class="dropdown-item collapsed " href="#" role="button" data-bs-toggle="collapse" data-bs-target="#landingsClassicCollapse" aria-expanded="false" aria-controls="landingsClassicCollapse">Classic</a>
+
+                          <div id="landingsClassicCollapse" class="navbar-fullscreen-collapse collapse" data-bs-parent="#landingsNavCollapse">
+                            <a class="dropdown-item " href="../index.html">Corporate</a>
+                            <a class="dropdown-item " href="../landing-classic-analytics.html">Analytics <span class="badge bg-primary rounded-pill ms-1">Hot</span></a>
+                            <a class="dropdown-item " href="../landing-classic-studio.html">Studio</a>
+                            <a class="dropdown-item " href="../landing-classic-marketing.html">Marketing</a>
+                            <a class="dropdown-item " href="../landing-classic-advertisement.html">Advertisement</a>
+                            <a class="dropdown-item " href="../landing-classic-consulting.html">Consulting</a>
+                            <a class="dropdown-item " href="../landing-classic-portfolio.html">Portfolio</a>
+                            <a class="dropdown-item " href="../landing-classic-software.html">Software</a>
+                            <a class="dropdown-item " href="../landing-classic-business.html">Business</a>
+                          </div>
+                        </div>
+                        <!-- End Classic -->
+
+                        <!-- App -->
+                        <div class="nav-item">
+                          <a class="dropdown-item collapsed " href="#" role="button" data-bs-toggle="collapse" data-bs-target="#landingsAppCollapse" aria-expanded="false" aria-controls="landingsAppCollapse">App</a>
+
+                          <div id="landingsAppCollapse" class="navbar-fullscreen-collapse collapse" data-bs-parent="#landingsNavCollapse">
+                            <a class="dropdown-item " href="../landing-app-ui-kit.html">UI Kit</a>
+                            <a class="dropdown-item " href="../landing-app-saas.html">SaaS</a>
+                            <a class="dropdown-item " href="../landing-app-workflow.html">Workflow</a>
+                            <a class="dropdown-item " href="../landing-app-payment.html">Payment</a>
+                            <a class="dropdown-item " href="../landing-app-tool.html">Tool</a>
+                          </div>
+                        </div>
+                        <!-- End App -->
+
+                        <!-- Onepage -->
+                        <div class="nav-item">
+                          <a class="dropdown-item collapsed " href="#" role="button" data-bs-toggle="collapse" data-bs-target="#landingsOnepageCollapse" aria-expanded="false" aria-controls="landingsOnepageCollapse">Onepage</a>
+
+                          <div id="landingsOnepageCollapse" class="navbar-fullscreen-collapse collapse" data-bs-parent="#landingsNavCollapse">
+                            <a class="dropdown-item " href="../landing-onepage-corporate.html">Corporate</a>
+                            <a class="dropdown-item " href="../landing-onepage-saas.html">SaaS <span class="badge bg-primary rounded-pill ms-1">Hot</span></a>
+                          </div>
+                        </div>
+                        <!-- End Onepage -->
+                      </div>
+                    </div>
+                  </li>
+                  <!-- End Landings -->
+
+                  <!-- Company -->
+                  <li class="nav-item">
+                    <a class="nav-link collapsed " href="#" role="button" data-bs-toggle="collapse" data-bs-target="#companyCollapse" aria-expanded="false" aria-controls="companyCollapse">Company</a>
+
+                    <div id="companyCollapse" class="navbar-fullscreen-collapse collapse" data-bs-parent="#navbarNavCollapse">
+                      <a class="dropdown-item " href="../page-about.html">About</a>
+                      <a class="dropdown-item " href="../page-services.html">Services</a>
+                      <a class="dropdown-item " href="../page-customer-stories.html">Customer Stories</a>
+                      <a class="dropdown-item " href="../page-customer-story.html">Customer Story</a>
+                      <a class="dropdown-item " href="../page-careers.html">Careers</a>
+                      <a class="dropdown-item " href="../page-careers-overview.html">Careers Overview</a>
+                      <a class="dropdown-item " href="../page-hire-us.html">Hire Us</a>
+                      <a class="dropdown-item " href="../page-pricing.html">Pricing</a>
+                      <a class="dropdown-item " href="../page-contacts-agency.html">Contacts: Agency</a>
+                      <a class="dropdown-item " href="../page-contacts-startup.html">Contacts: Startup</a>
+                    </div>
+                  </li>
+                  <!-- End Company -->
+
+                  <!-- Account -->
+                  <li class="nav-item">
+                    <a class="nav-link collapsed " href="#" role="button" data-bs-toggle="collapse" data-bs-target="#accountCollapse" aria-expanded="false" aria-controls="accountCollapse">Account</a>
+
+                    <div id="accountCollapse" class="navbar-fullscreen-collapse collapse" data-bs-parent="#navbarNavCollapse">
+                      <!-- Authentication -->
+                      <div class="nav-item">
+                        <a class="dropdown-item collapsed " href="#" role="button" data-bs-toggle="collapse" data-bs-target="#authenticationCollapse" aria-expanded="false" aria-controls="authenticationCollapse">
+                          Authentication
+                        </a>
+
+                        <div id="authenticationCollapse" class="navbar-fullscreen-collapse collapse" data-bs-parent="#accountCollapse">
+                          <a class="dropdown-item " href="../page-login.html">Login</a>
+                          <a class="dropdown-item " href="../page-signup.html">Signup</a>
+                          <a class="dropdown-item " href="../page-reset-password.html">Reset Password</a>
+                          <a class="dropdown-item " href="../page-login-simple.html">Login Simple</a>
+                          <a class="dropdown-item " href="../page-signup-simple.html">Signup Simple</a>
+                          <a class="dropdown-item " href="../page-reset-password-simple.html">Reset Password Simple</a>
+                        </div>
+                      </div>
+                      <!-- End Authentication -->
+
+                      <a class="dropdown-item " href="../account-overview.html">Personal info</a>
+                      <a class="dropdown-item " href="../account-login-and-security.html">Login &amp; Security</a>
+                      <a class="dropdown-item " href="../account-notifications.html">Notifications</a>
+                      <a class="dropdown-item " href="../account-preferences.html">Preferences</a>
+                      <a class="dropdown-item " href="../account-orders.html">Orders</a>
+                      <a class="dropdown-item " href="../account-wishlist.html">Wishlist</a>
+                      <a class="dropdown-item " href="../account-billing.html">Plans &amp; Payment</a>
+                      <a class="dropdown-item " href="../account-address.html">Address</a>
+                      <a class="dropdown-item " href="../account-teams.html">Teams</a>
+                    </div>
+                  </li>
+                  <!-- End Account -->
+
+                  <!-- Pages -->
+                  <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" role="button" data-bs-toggle="collapse" data-bs-target="#pagesCollapse" aria-expanded="false" aria-controls="pagesCollapse">
+                      Pages
+                    </a>
+
+                    <div id="pagesCollapse" class="navbar-fullscreen-collapse collapse" data-bs-parent="#navbarNavCollapse">
+                      <div id="pagesNavCollapse">
+                        <a class="dropdown-item " href="../page-faq.html">FAQ</a>
+                        <a class="dropdown-item " href="../page-terms.html">Terms &amp; Conditions</a>
+                        <a class="dropdown-item " href="../page-privacy.html">Privacy &amp; Policy</a>
+                        <a class="dropdown-item " href="../page-coming-soon.html">Coming Soon</a>
+                        <a class="dropdown-item " href="../page-maintenance-mode.html">Maintenance Mode</a>
+                        <a class="dropdown-item " href="../page-status.html">Status</a>
+                        <a class="dropdown-item " href="../page-invoice.html">Invoice</a>
+                        <a class="dropdown-item " href="../page-error-404.html">Error 404</a>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- End Pages -->
+
+                  <!-- Blog -->
+                  <li class="nav-item">
+                    <a class="nav-link collapsed " href="#" role="button" data-bs-toggle="collapse" data-bs-target="#blogCollapse" aria-expanded="false" aria-controls="blogCollapse">Blog</a>
+
+                    <div id="blogCollapse" class="navbar-fullscreen-collapse collapse" data-bs-parent="#navbarNavCollapse">
+                      <a class="dropdown-item " href="../blog-journal.html">Journal</a>
+                      <a class="dropdown-item " href="../blog-metro.html">Metro</a>
+                      <a class="dropdown-item " href="../blog-newsroom.html">Newsroom</a>
+                      <a class="dropdown-item " href="../blog-article.html">Article</a>
+                      <a class="dropdown-item " href="../blog-author-profile.html">Author Profile</a>
+                    </div>
+                  </li>
+                  <!-- End Blog -->
+
+                  <!-- Portfolio -->
+                  <li class="nav-item">
+                    <a class="nav-link collapsed " href="#" role="button" data-bs-toggle="collapse" data-bs-target="#portfolioCollapse" aria-expanded="false" aria-controls="portfolioCollapse">Portfolio</a>
+
+                    <div id="portfolioCollapse" class="navbar-fullscreen-collapse collapse" data-bs-parent="#navbarNavCollapse">
+                      <a class="dropdown-item " href="../portfolio-grid.html">Grid</a>
+                      <a class="dropdown-item " href="../portfolio-product-article.html">Product Article</a>
+                      <a class="dropdown-item " href="../portfolio-case-studies-branding.html">Case Studies: Branding</a>
+                      <a class="dropdown-item " href="../portfolio-case-studies-product.html">Case Studies: Product</a>
+                    </div>
+                  </li>
+                  <!-- End Portfolio -->
+
+                  <!-- Demos -->
+                  <li class="nav-item">
+                    <a class="nav-link collapsed " href="#" role="button" data-bs-toggle="collapse" data-bs-target="#demosCollapse" aria-expanded="false" aria-controls="demosCollapse">Demos</a>
+
+                    <div id="demosCollapse" class="navbar-fullscreen-collapse collapse" data-bs-parent="#navbarNavCollapse">
+                      <a class="dropdown-item " href="../demo-real-main/index.html">Main</a>
+                      <a class="dropdown-item " href="../demo-real-estate/index.html">Real Estate</a>
+                      <a class="dropdown-item " href="../demo-jobs/index.html">Jobs</a>
+                      <a class="dropdown-item " href="../demo-course/index.html">Course</a>
+                      <a class="dropdown-item " href="../demo-shop/index.html">E-commerce</a>
+                      <a class="dropdown-item " href="../demo-app-marketplace/index.html">App Marketplace</a>
+                      <a class="dropdown-item " href="../demo-help-desk/index.html">Help Desk</a>
+                    </div>
+                  </li>
+                  <!-- End Demos -->
+
+                  <!-- Docs -->
+                  <li class="nav-item">
+                    <a class="nav-link collapsed " href="#" role="button" data-bs-toggle="collapse" data-bs-target="#docsCollapse" aria-expanded="false" aria-controls="docsCollapse">Docs</a>
+
+                    <div id="docsCollapse" class="navbar-fullscreen-collapse collapse" data-bs-parent="#navbarNavCollapse">
+                      <a class="dropdown-item" href="../documentation/index.html">Documentation</a>
+                      <a class="dropdown-item" href="../snippets/index.html">Snippets</a>
+                    </div>
+                  </li>
+                  <!-- End Docs -->
+                </ul>
+                <!-- End Collapse -->
+              </div>
+              <!-- End Col -->
+
+              <div class="col-md-4 d-none d-md-inline-block">
+                <!-- Address -->
+                <div class="mb-7">
+                  <span class="text-cap text-white">Address</span>
+
+                  <address class="d-grid gap-1 mb-0">
+                    <span class="text-white-70">+1 (062) 109-9222</span>
+                    <span class="text-white-70">hello@example.com</span>
+                    <span class="text-white-70">153 Williamson Plaza, Maggieberg, MT 09514</span>
+                  </address>
+                </div>
+                <!-- End Address -->
+
+                <!-- Socials -->
+                <span class="text-cap text-white">Social</span>
+
+                <ul class="list-inline mb-0">
+                  <li class="list-inline-item">
+                    <a class="btn btn-soft-light btn-sm btn-icon rounded-circle" href="#">
+                      <i class="bi-facebook"></i>
+                    </a>
+                  </li>
+
+                  <li class="list-inline-item">
+                    <a class="btn btn-soft-light btn-sm btn-icon rounded-circle" href="#">
+                      <i class="bi-google"></i>
+                    </a>
+                  </li>
+
+                  <li class="list-inline-item">
+                    <a class="btn btn-soft-light btn-sm btn-icon rounded-circle" href="#">
+                      <i class="bi-twitter"></i>
+                    </a>
+                  </li>
+
+                  <li class="list-inline-item">
+                    <a class="btn btn-soft-light btn-sm btn-icon rounded-circle" href="#">
+                      <i class="bi-github"></i>
+                    </a>
+                  </li>
+                </ul>
+                <!-- End Socials -->
+              </div>
+              <!-- End Col -->
+            </div>
+            <!-- End Row -->
+          </div>
+        </div>
+      </div>
+      <!-- End Collapse -->
+    </nav>
+  </header>
+
   <!-- ========== END HEADER ========== -->
 
   <!-- ========== MAIN CONTENT ========== -->
@@ -341,7 +600,7 @@
             <pre>
               <code class="language-markup" data-lang="html">
                 &lt;!-- JS Implementing Plugins --&gt;
-                &lt;script src="@@autopath/assets/vendor/hs-header/dist/hs-header.min.js"&gt;&lt;/script&gt;
+                &lt;script src="../assets/vendor/hs-header/dist/hs-header.min.js"&gt;&lt;/script&gt;
 
                 &lt;!-- JS Plugins Init. --&gt;
                 &lt;script&gt;
@@ -372,22 +631,36 @@
 
   <!-- ========== SECONDARY CONTENTS ========== -->
   <!-- Go To -->
-  @@include("@@autopath/partials/layouts-components/go-to.html")
+  <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;"
+     data-hs-go-to-options='{
+       "offsetTop": 700,
+       "position": {
+         "init": {
+           "right": "2rem"
+         },
+         "show": {
+           "bottom": "2rem"
+         },
+         "hide": {
+           "bottom": "-2rem"
+         }
+       }
+     }'>
+    <i class="bi-chevron-up"></i>
+  </a>
   <!-- ========== END SECONDARY CONTENTS ========== -->
 
-  <!-- JS Global Compulsory @@deleteLine:build -->
-  <script src="@@autopath/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS Global Compulsory  -->
+  <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- JS Implementing Plugins -->
-  <!-- bundlejs:vendor [@@autopath] -->
-  <script src="@@autopath/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
-  <script src="@@autopath/assets/vendor/prism/prism.js"></script>
-  <script src="@@autopath/assets/vendor/hs-show-animation/dist/hs-show-animation.min.js"></script>
-  <script src="@@autopath/assets/vendor/hs-header/dist/hs-header.min.js"></script>
+  <script src="../assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
+  <script src="../assets/vendor/prism/prism.js"></script>
+  <script src="../assets/vendor/hs-show-animation/dist/hs-show-animation.min.js"></script>
+  <script src="../assets/vendor/hs-header/dist/hs-header.min.js"></script>
 
   <!-- JS Front -->
-  <!-- bundlejs:theme [@@autopath] -->
-  <script src="@@autopath/assets/js/hs.core.js"></script>
+  <script src="../assets/js/theme.min.js"></script>
 
   <!-- JS Plugins Init. -->
   <script>

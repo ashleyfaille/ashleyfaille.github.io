@@ -9,33 +9,380 @@
   <title>Footer - Snippets | Front - Multipurpose Responsive Template</title>
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="@@autopath/favicon.ico">
+  <link rel="shortcut icon" href="../favicon.ico">
 
   <!-- Font -->
-  <link href="@@vars.themeFont" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- CSS Implementing Plugins -->
-  <!-- bundlecss:vendor [@@autopath] -->
-  <link rel="stylesheet" href="@@autopath/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
 
   <!-- CSS Front Template -->
-  <!-- bundlecss:theme [@@autopath] @@vars.version -->
-  <link rel="stylesheet" href="@@autopath/assets/css/theme.css">
-  <link rel="stylesheet" href="@@autopath/assets/css/snippets.css">
+  <link rel="stylesheet" href="../assets/css/theme.min.css">
+  <link rel="stylesheet" href="../assets/css/snippets.min.css">
 </head>
 
 <body class="navbar-sidebar-aside-lg">
   <!-- ========== HEADER ========== -->
-  @@include("@@autopath/partials/docs/snippets-navbar.html")
+  <header id="header" class="navbar navbar-expand navbar-fixed navbar-end navbar-light navbar-sticky-lg-top bg-white">
+    <div class="container-fluid">
+      <nav class="navbar-nav-wrap">
+        <div class="row flex-grow-1">
+          <!-- Default Logo -->
+          <div class="docs-navbar-sidebar-container d-flex align-items-center mb-2 mb-lg-0">
+            <a class="navbar-brand" href="../snippets/index.html" aria-label="Space">
+              <img class="navbar-brand-logo" src="../assets/svg/logos/logo.svg" alt="Logo">
+            </a>
+            <a href="../documentation/changelog.html">
+              <span class="badge bg-soft-primary text-primary">v4.3.1</span>
+            </a>
+          </div>
+          <!-- End Default Logo -->
+
+          <div class="col-md px-lg-0">
+            <div class="d-flex justify-content-between align-items-center px-lg-5 px-xl-10">
+              <div class="d-none d-md-block">
+                <!-- Search Form -->
+                <form id="snippetsSearch" class="position-relative"
+                      data-hs-list-options='{
+                       "searchMenu": true,
+                       "keyboard": true,
+                       "item": "searchTemplate",
+                       "valueNames": ["component", "category", {"name": "link", "attr": "href"}],
+                       "empty": "#searchNoResults"
+                     }'>
+                  <!-- Input Group -->
+                  <div class="input-group input-group-merge navbar-input-group">
+                    <div class="input-group-prepend input-group-text">
+                      <i class="bi-search"></i>
+                    </div>
+
+                    <input type="search" class="search form-control form-control-sm" placeholder="Search in snippets" aria-label="Search in snippets">
+
+                    <a class="input-group-append input-group-text" href="javascript:;">
+                      <i id="clearSearchResultsIcon" class="bi-x" style="display: none;"></i>
+                    </a>
+                  </div>
+                  <!-- End Input Group -->
+
+                  <!-- List -->
+                  <div class="list dropdown-menu w-100 overflow-auto" style="max-height: 16rem;"></div>
+                  <!-- End List -->
+
+                  <!-- Empty -->
+                  <div id="searchNoResults" style="display: none;">
+                    <div class="text-center p-4">
+                      <img class="mb-3" src="../assets/svg/illustrations/oc-error.svg" alt="Image Description" style="width: 10rem;">
+                      <p class="mb-0">No Results</p>
+                    </div>
+                  </div>
+                  <!-- End Empty -->
+                </form>
+                <!-- End Search Form -->
+
+                <!-- List Item Template -->
+                <div class="d-none">
+                  <div id="searchTemplate" class="dropdown-item">
+                    <a class="d-block link" href="#">
+                      <span class="category d-block fw-normal text-muted mb-1"></span>
+                      <span class="component text-dark"></span>
+                    </a>
+                  </div>
+                </div>
+                <!-- End List Item Template -->
+              </div>
+
+              <!-- Navbar -->
+              <ul class="navbar-nav p-0">
+                <li class="nav-item">
+                  <a class="btn btn-ghost-secondary btn-sm" href="https://htmlstream.com/contact-us" target="_blank">
+                    Get Support <i class="bi-box-arrow-up-right ms-1"></i>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-primary btn-sm" href="../index.html">
+                    <i class="bi-eye me-1"></i> Preview Demo
+                  </a>
+                </li>
+              </ul>
+              <!-- End Navbar -->
+            </div>
+          </div>
+          <!-- End Col -->
+        </div>
+        <!-- End Row -->
+      </nav>
+    </div>
+  </header>
   <!-- ========== END HEADER ========== -->
 
   <!-- ========== MAIN CONTENT ========== -->
   <main id="content" role="main">
     <!-- Navbar -->
-    @@include("@@autopath/partials/docs/snippets-sidebar.html", {
-      "category": "",
-      "link": "footer.html"
-    })
+    <nav class="js-nav-scroller navbar navbar-expand-lg navbar-sidebar navbar-vertical navbar-light bg-white border-end"
+          data-hs-nav-scroller-options='{
+            "type": "vertical",
+            "target": ".navbar-nav .active",
+            "offset": 80
+           }'>
+      <!-- Navbar Toggle -->
+      <button type="button" class="navbar-toggler btn btn-white d-grid w-100" data-bs-toggle="collapse" data-bs-target="#navbarVerticalNavMenu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbarVerticalNavMenu">
+        <span class="d-flex justify-content-between align-items-center">
+          <span class="h6 mb-0">Nav menu</span>
+
+          <span class="navbar-toggler-default">
+            <i class="bi-list"></i>
+          </span>
+
+          <span class="navbar-toggler-toggled">
+            <i class="bi-x"></i>
+          </span>
+        </span>
+      </button>
+      <!-- End Navbar Toggle -->
+
+      <!-- Navbar Collapse -->
+      <div id="navbarVerticalNavMenu" class="collapse navbar-collapse">
+        <div class="navbar-brand-wrapper border-end" style="height: auto;">
+          <!-- Default Logo -->
+          <div class="d-flex align-items-center mb-3">
+            <a class="navbar-brand" href="../snippets/index.html" aria-label="Space">
+              <img class="navbar-brand-logo" src="../assets/svg/logos/logo.svg" alt="Logo">
+            </a>
+            <a class="navbar-brand-badge" href="../documentation/changelog.html">
+              <span class="badge bg-soft-primary text-primary ms-2">v4.3.1</span>
+            </a>
+          </div>
+          <!-- End Default Logo -->
+      
+          <!-- Nav -->
+          <ul class="nav nav-segment nav-fill nav-justified">
+            <li class="nav-item">
+              <a class="nav-link" href="../documentation/index.html">Docs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="../snippets/index.html">Snippets</a>
+            </li>
+          </ul>
+          <!-- End Nav -->
+        </div>
+
+        <div class="docs-navbar-sidebar-aside-body navbar-sidebar-aside-body">
+          <ul id="navbarSettings" class="navbar-nav nav nav-vertical nav-tabs nav-tabs-borderless nav-sm">
+            <li class="nav-item">
+              <span class="nav-subtitle">Snippets</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/index.html">Introduction</a>
+            </li>
+
+            <li class="nav-item my-2 my-lg-5"></li>
+        
+            <li class="nav-item">
+              <span class="nav-subtitle">Navbar / Heroes</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/navbar.html">Headers (Navbar)</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/hero-sections.html">Hero Sections</a>
+            </li>
+
+            <li class="nav-item my-2 my-lg-5"></li>
+
+            <li class="nav-item">
+              <span class="nav-subtitle">Content</span>
+            </li>
+
+            <li class="nav-item ">
+              <a class="nav-link dropdown-toggle" href="#snippetsSidebarNavFeaturesCollapse" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="snippetsSidebarNavFeaturesCollapse">Features</a>
+
+              <div id="snippetsSidebarNavFeaturesCollapse" class="nav-collapse collapse ">
+                <a class="nav-link " href="features-general.html">General</a>
+                <a class="nav-link " href="features-stats.html">Stats</a>
+                <a class="nav-link " href="features-step.html">Step</a>
+                <a class="nav-link " href="features-navs.html">Navs (Tabs)</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/icon-blocks.html">Icon Blocks</a>
+            </li>
+
+            <li class="nav-item ">
+              <a class="nav-link dropdown-toggle" href="#snippetsSidebarNavCardsCollapse" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="snippetsSidebarNavCardsCollapse">Cards</a>
+
+              <div id="snippetsSidebarNavCardsCollapse" class="nav-collapse collapse ">
+                <a class="nav-link " href="cards-grid.html">Grid</a>
+                <a class="nav-link " href="cards-list.html">List</a>
+              </div>
+            </li>
+
+            <li class="nav-item ">
+              <a class="nav-link dropdown-toggle" href="#snippetsSidebarNavDirectoryCollapse" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="snippetsSidebarNavDirectoryCollapse">Directory</a>
+
+              <div id="snippetsSidebarNavDirectoryCollapse" class="nav-collapse collapse ">
+                <a class="nav-link " href="directory-grid.html">Grid</a>
+                <a class="nav-link " href="directory-list.html">List</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/testimonials.html">Testimonials</a>
+            </li>
+
+            <li class="nav-item ">
+              <a class="nav-link dropdown-toggle" href="#snippetsSidebarNavBlogsCollapse" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="snippetsSidebarNavBlogsCollapse">Blogs</a>
+
+              <div id="snippetsSidebarNavBlogsCollapse" class="nav-collapse collapse ">
+                <a class="nav-link " href="blogs-grid.html">Grid</a>
+                <a class="nav-link " href="blogs-list.html">List</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/tables.html">Tables</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/ecommerce.html">E-commerce</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/pricing.html">Pricing</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/team-sections.html">Team Sections</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/breadcrumb.html">Breadcrumb</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/cta.html">Call-to-Action (CTA)</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/modals.html">Modals</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/portfolio.html">Portfolio</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/gallery.html">Gallery</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/clients.html">Clients</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/countdown.html">Countdown</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/faq.html">FAQ</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/lists.html">Lists</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/collapse-accordion.html">Collapse/Accordion</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/comments.html">Comments</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/feedback-and-reviews.html">Feedback &amp; Reviews</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/user-profile.html">User Profile</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="sidebar-examples.html">Sidebar Examples</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="calendar-view.html">Calendar View</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="notification.html">Notification</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="content-sections.html">Content Sections</a>
+            </li>
+
+            <li class="nav-item my-2 my-lg-5"></li>
+
+            <li class="nav-item">
+              <small class="nav-subtitle">Forms</small>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="forms-authentication.html">Authentication</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="forms-feedback.html">Feedback</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="forms-filters.html">Filters</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="forms-search.html">Search</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="forms-directory.html">Directory</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="forms-subscribe.html">Subscribe</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="forms-account.html">Account</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="forms-wizard-and-steps.html">Wizard &amp; Steps</a>
+            </li>
+
+            <li class="nav-item my-2 my-lg-5"></li>
+
+            <li class="nav-item">
+              <small class="nav-subtitle">Contact / Footer</small>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/contact-sections.html">Contact Sections</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="../snippets/footer.html">Footer</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- End Navbar Collapse -->
+    </nav>
     <!-- End Navbar -->
 
     <!-- Content -->
@@ -80,7 +427,176 @@
         <div class="tab-content" id="navTabContent1">
           <div class="tab-pane fade p-4 show active" id="nav-result1" role="tabpanel" aria-labelledby="nav-resultTab1">
             <!-- ========== FOOTER ========== -->
-            @@include("@@autopath/partials/footer/main.html")
+            <footer>
+              <div class="container pb-1 pb-lg-7">
+                <div class="row content-space-t-2">
+                  <div class="col-lg-3 mb-7 mb-lg-0">
+                    <!-- Logo -->
+                    <div class="mb-5">
+                      <a class="navbar-brand" href="../index.html" aria-label="Space">
+                        <img class="navbar-brand-logo" src="../assets/svg/logos/logo.svg" alt="Image Description">
+                      </a>
+                    </div>
+                    <!-- End Logo -->
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1">
+                      <li><a class="link-sm link-secondary" href="#"><i class="bi-geo-alt-fill me-1"></i> 153 Williamson Plaza, Maggieberg</a></li>
+                      <li><a class="link-sm link-secondary" href="tel:1-062-109-9222"><i class="bi-telephone-inbound-fill me-1"></i> +1 (062) 109-9222</a></li>
+                    </ul>
+                    <!-- End List -->
+        
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-sm mb-7 mb-sm-0">
+                    <h5 class="mb-3">Company</h5>
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1 mb-0">
+                      <li><a class="link-sm link-secondary" href="#">About</a></li>
+                      <li><a class="link-sm link-secondary" href="#">Careers <span class="badge bg-warning text-dark rounded-pill ms-1">We're hiring</span></a></li>
+                      <li><a class="link-sm link-secondary" href="#">Blog</a></li>
+                      <li><a class="link-sm link-secondary" href="#">Customers <i class="bi-box-arrow-up-right small ms-1"></i></a></li>
+                      <li><a class="link-sm link-secondary" href="#">Hire us</a></li>
+                    </ul>
+                    <!-- End List -->
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-sm mb-7 mb-sm-0">
+                    <h5 class="mb-3">Features</h5>
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1 mb-0">
+                      <li><a class="link-sm link-secondary" href="#">Press <i class="bi-box-arrow-up-right small ms-1"></i></a></li>
+                      <li><a class="link-sm link-secondary" href="#">Release Notes</a></li>
+                      <li><a class="link-sm link-secondary" href="#">Integrations</a></li>
+                      <li><a class="link-sm link-secondary" href="#">Pricing</a></li>
+                    </ul>
+                    <!-- End List -->
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-sm mb-7 mb-sm-0">
+                    <h5 class="mb-3">Documentation</h5>
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1 mb-0">
+                      <li><a class="link-sm link-secondary" href="#">Support</a></li>
+                      <li><a class="link-sm link-secondary" href="#">Docs</a></li>
+                      <li><a class="link-sm link-secondary" href="#">Status</a></li>
+                      <li><a class="link-sm link-secondary" href="#">API Reference</a></li>
+                      <li><a class="link-sm link-secondary" href="#">Tech Requirements</a></li>
+                    </ul>
+                    <!-- End List -->
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-sm">
+                    <h5 class="mb-3">Resources</h5>
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1 mb-5">
+                      <li><a class="link-sm link-secondary" href="#"><i class="bi-question-circle-fill me-1"></i> Help</a></li>
+                      <li><a class="link-sm link-secondary" href="#"><i class="bi-person-circle me-1"></i> Your Account</a></li>
+                    </ul>
+                    <!-- End List -->
+                  </div>
+                  <!-- End Col -->
+                </div>
+                <!-- End Row -->
+
+                <div class="border-top my-7"></div>
+
+                <div class="row mb-7">
+                  <div class="col-sm mb-3 mb-sm-0">
+                    <!-- Socials -->
+                    <ul class="list-inline list-separator mb-0">
+                      <li class="list-inline-item">
+                        <a class="text-body" href="#">Privacy &amp; Policy</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a class="text-body" href="#">Terms</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a class="text-body" href="#">Site Map</a>
+                      </li>
+                    </ul>
+                    <!-- End Socials -->
+                  </div>
+
+                  <div class="col-sm-auto">
+                    <!-- Socials -->
+                    <ul class="list-inline mb-0">
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                          <i class="bi-facebook"></i>
+                        </a>
+                      </li>
+          
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                          <i class="bi-google"></i>
+                        </a>
+                      </li>
+          
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                          <i class="bi-twitter"></i>
+                        </a>
+                      </li>
+          
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                          <i class="bi-github"></i>
+                        </a>
+                      </li>
+          
+                      <li class="list-inline-item">
+                        <!-- Button Group -->
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-soft-secondary btn-xs dropdown-toggle" id="footerSelectLanguage" data-bs-toggle="dropdown" aria-expanded="false" data-bs-dropdown-animation>
+                            <span class="d-flex align-items-center">
+                              <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/>
+                              <span>English (US)</span>
+                            </span>
+                          </button>
+
+                          <div class="dropdown-menu" aria-labelledby="footerSelectLanguage">
+                            <a class="dropdown-item d-flex align-items-center active" href="#">
+                              <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/>
+                              <span>English (US)</span>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                              <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/de.svg" alt="Image description" width="16"/>
+                              <span>Deutsch</span>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                              <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/es.svg" alt="Image description" width="16"/>
+                              <span>Español</span>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                              <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/cn.svg" alt="Image description" width="16"/>
+                              <span>中文 (繁體)</span>
+                            </a>
+                          </div>
+                        </div>
+                        <!-- End Button Group -->
+                      </li>
+                    </ul>
+                    <!-- End Socials -->
+                  </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="w-md-85 text-lg-center mx-lg-auto">
+                  <p class="text-muted small">&copy; Front. 2021 Htmlstream. All rights reserved.</p>
+                  <p class="text-muted small">When you visit or interact with our sites, services or tools, we or our authorised service providers may use cookies for storing information to help provide you with a better, faster and safer experience and for marketing purposes.</p>
+                </div>
+                <!-- End Copyright -->
+              </div>
+            </footer>
             <!-- ========== END FOOTER ========== -->
           </div>
 
@@ -219,26 +735,26 @@
                             &lt;div class="btn-group"&gt;
                               &lt;button type="button" class="btn btn-soft-secondary btn-xs dropdown-toggle" id="footerLightSelectLanguage" data-bs-toggle="dropdown" aria-expanded="false" data-bs-dropdown-animation&gt;
                                 &lt;span class="d-flex align-items-center"&gt;
-                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
+                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
                                   &lt;span&gt;English (US)&lt;/span&gt;
                                 &lt;/span&gt;
                               &lt;/button&gt;
 
                               &lt;div class="dropdown-menu" aria-labelledby="footerLightSelectLanguage"&gt;
                                 &lt;a class="dropdown-item d-flex align-items-center active" href="#"&gt;
-                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
+                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
                                   &lt;span&gt;English (US)&lt;/span&gt;
                                 &lt;/a&gt;
                                 &lt;a class="dropdown-item d-flex align-items-center" href="#"&gt;
-                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/de.svg" alt="Image description" width="16"/&gt;
+                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/de.svg" alt="Image description" width="16"/&gt;
                                   &lt;span&gt;Deutsch&lt;/span&gt;
                                 &lt;/a&gt;
                                 &lt;a class="dropdown-item d-flex align-items-center" href="#"&gt;
-                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/es.svg" alt="Image description" width="16"/&gt;
+                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/es.svg" alt="Image description" width="16"/&gt;
                                   &lt;span&gt;Español&lt;/span&gt;
                                 &lt;/a&gt;
                                 &lt;a class="dropdown-item d-flex align-items-center" href="#"&gt;
-                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/cn.svg" alt="Image description" width="16"/&gt;
+                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/cn.svg" alt="Image description" width="16"/&gt;
                                   &lt;span&gt;中文 (繁體)&lt;/span&gt;
                                 &lt;/a&gt;
                               &lt;/div&gt;
@@ -267,7 +783,6 @@
             <pre>
               <code class="language-markup" data-lang="html">
                 &lt;!-- JS Front --&gt;
-                &lt;script src="@@autopath/assets/js/hs.bs-dropdown.js"&gt;&lt;/script&gt;
 
                 &lt;!-- JS Plugins Init. --&gt;
                 &lt;script&gt;
@@ -315,7 +830,176 @@
         <div class="tab-content" id="navTabContent2">
           <div class="tab-pane fade p-4 show active" id="nav-result2" role="tabpanel" aria-labelledby="nav-resultTab2">
             <!-- ========== FOOTER ========== -->
-            @@include("@@autopath/partials/footer/main-light.html")
+            <footer class="bg-light">
+              <div class="container pb-1 pb-lg-7">
+                <div class="row content-space-t-2">
+                  <div class="col-lg-3 mb-7 mb-lg-0">
+                    <!-- Logo -->
+                    <div class="mb-5">
+                      <a class="navbar-brand" href="../index.html" aria-label="Space">
+                        <img class="navbar-brand-logo" src="../assets/svg/logos/logo.svg" alt="Image Description">
+                      </a>
+                    </div>
+                    <!-- End Logo -->
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1">
+                      <li><a class="link-sm link-secondary" href="#"><i class="bi-geo-alt-fill me-1"></i> 153 Williamson Plaza, Maggieberg</a></li>
+                      <li><a class="link-sm link-secondary" href="tel:1-062-109-9222"><i class="bi-telephone-inbound-fill me-1"></i> +1 (062) 109-9222</a></li>
+                    </ul>
+                    <!-- End List -->
+        
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-sm mb-7 mb-sm-0">
+                    <h5 class="mb-3">Company</h5>
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1 mb-0">
+                      <li><a class="link-sm link-secondary" href="#">About</a></li>
+                      <li><a class="link-sm link-secondary" href="#">Careers <span class="badge bg-warning text-dark rounded-pill ms-1">We're hiring</span></a></li>
+                      <li><a class="link-sm link-secondary" href="#">Blog</a></li>
+                      <li><a class="link-sm link-secondary" href="#">Customers <i class="bi-box-arrow-up-right small ms-1"></i></a></li>
+                      <li><a class="link-sm link-secondary" href="#">Hire us</a></li>
+                    </ul>
+                    <!-- End List -->
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-sm mb-7 mb-sm-0">
+                    <h5 class="mb-3">Features</h5>
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1 mb-0">
+                      <li><a class="link-sm link-secondary" href="#">Press <i class="bi-box-arrow-up-right small ms-1"></i></a></li>
+                      <li><a class="link-sm link-secondary" href="#">Release Notes</a></li>
+                      <li><a class="link-sm link-secondary" href="#">Integrations</a></li>
+                      <li><a class="link-sm link-secondary" href="#">Pricing</a></li>
+                    </ul>
+                    <!-- End List -->
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-sm mb-7 mb-sm-0">
+                    <h5 class="mb-3">Documentation</h5>
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1 mb-0">
+                      <li><a class="link-sm link-secondary" href="#">Support</a></li>
+                      <li><a class="link-sm link-secondary" href="#">Docs</a></li>
+                      <li><a class="link-sm link-secondary" href="#">Status</a></li>
+                      <li><a class="link-sm link-secondary" href="#">API Reference</a></li>
+                      <li><a class="link-sm link-secondary" href="#">Tech Requirements</a></li>
+                    </ul>
+                    <!-- End List -->
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-sm">
+                    <h5 class="mb-3">Resources</h5>
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1 mb-5">
+                      <li><a class="link-sm link-secondary" href="#"><i class="bi-question-circle-fill me-1"></i> Help</a></li>
+                      <li><a class="link-sm link-secondary" href="#"><i class="bi-person-circle me-1"></i> Your Account</a></li>
+                    </ul>
+                    <!-- End List -->
+                  </div>
+                  <!-- End Col -->
+                </div>
+                <!-- End Row -->
+
+                <div class="border-top my-7"></div>
+
+                <div class="row mb-7">
+                  <div class="col-sm mb-3 mb-sm-0">
+                    <!-- Socials -->
+                    <ul class="list-inline list-separator mb-0">
+                      <li class="list-inline-item">
+                        <a class="text-body" href="#">Privacy &amp; Policy</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a class="text-body" href="#">Terms</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a class="text-body" href="#">Site Map</a>
+                      </li>
+                    </ul>
+                    <!-- End Socials -->
+                  </div>
+
+                  <div class="col-sm-auto">
+                    <!-- Socials -->
+                    <ul class="list-inline mb-0">
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                          <i class="bi-facebook"></i>
+                        </a>
+                      </li>
+          
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                          <i class="bi-google"></i>
+                        </a>
+                      </li>
+          
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                          <i class="bi-twitter"></i>
+                        </a>
+                      </li>
+          
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                          <i class="bi-github"></i>
+                        </a>
+                      </li>
+          
+                      <li class="list-inline-item">
+                        <!-- Button Group -->
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-soft-secondary btn-xs dropdown-toggle" id="footerSelectLanguage" data-bs-toggle="dropdown" aria-expanded="false" data-bs-dropdown-animation>
+                            <span class="d-flex align-items-center">
+                              <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/>
+                              <span>English (US)</span>
+                            </span>
+                          </button>
+
+                          <div class="dropdown-menu" aria-labelledby="footerSelectLanguage">
+                            <a class="dropdown-item d-flex align-items-center active" href="#">
+                              <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/>
+                              <span>English (US)</span>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                              <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/de.svg" alt="Image description" width="16"/>
+                              <span>Deutsch</span>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                              <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/es.svg" alt="Image description" width="16"/>
+                              <span>Español</span>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                              <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/cn.svg" alt="Image description" width="16"/>
+                              <span>中文 (繁體)</span>
+                            </a>
+                          </div>
+                        </div>
+                        <!-- End Button Group -->
+                      </li>
+                    </ul>
+                    <!-- End Socials -->
+                  </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="w-md-85 text-lg-center mx-lg-auto">
+                  <p class="text-muted small">&copy; Front. 2021 Htmlstream. All rights reserved.</p>
+                  <p class="text-muted small">When you visit or interact with our sites, services or tools, we or our authorised service providers may use cookies for storing information to help provide you with a better, faster and safer experience and for marketing purposes.</p>
+                </div>
+                <!-- End Copyright -->
+              </div>
+            </footer>
             <!-- ========== END FOOTER ========== -->
           </div>
 
@@ -454,26 +1138,26 @@
                             &lt;div class="btn-group"&gt;
                               &lt;button type="button" class="btn btn-soft-secondary btn-xs dropdown-toggle" id="footerLightSelectLanguage" data-bs-toggle="dropdown" aria-expanded="false" data-bs-dropdown-animation&gt;
                                 &lt;span class="d-flex align-items-center"&gt;
-                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
+                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
                                   &lt;span&gt;English (US)&lt;/span&gt;
                                 &lt;/span&gt;
                               &lt;/button&gt;
 
                               &lt;div class="dropdown-menu" aria-labelledby="footerLightSelectLanguage"&gt;
                                 &lt;a class="dropdown-item d-flex align-items-center active" href="#"&gt;
-                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
+                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
                                   &lt;span&gt;English (US)&lt;/span&gt;
                                 &lt;/a&gt;
                                 &lt;a class="dropdown-item d-flex align-items-center" href="#"&gt;
-                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/de.svg" alt="Image description" width="16"/&gt;
+                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/de.svg" alt="Image description" width="16"/&gt;
                                   &lt;span&gt;Deutsch&lt;/span&gt;
                                 &lt;/a&gt;
                                 &lt;a class="dropdown-item d-flex align-items-center" href="#"&gt;
-                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/es.svg" alt="Image description" width="16"/&gt;
+                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/es.svg" alt="Image description" width="16"/&gt;
                                   &lt;span&gt;Español&lt;/span&gt;
                                 &lt;/a&gt;
                                 &lt;a class="dropdown-item d-flex align-items-center" href="#"&gt;
-                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/cn.svg" alt="Image description" width="16"/&gt;
+                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/cn.svg" alt="Image description" width="16"/&gt;
                                   &lt;span&gt;中文 (繁體)&lt;/span&gt;
                                 &lt;/a&gt;
                               &lt;/div&gt;
@@ -502,7 +1186,6 @@
             <pre>
               <code class="language-markup" data-lang="html">
                 &lt;!-- JS Front --&gt;
-                &lt;script src="@@autopath/assets/js/hs.bs-dropdown.js"&gt;&lt;/script&gt;
 
                 &lt;!-- JS Plugins Init. --&gt;
                 &lt;script&gt;
@@ -550,7 +1233,177 @@
         <div class="tab-content" id="navTabContent3">
           <div class="tab-pane fade p-4 show active" id="nav-result3" role="tabpanel" aria-labelledby="nav-resultTab3">
             <!-- ========== FOOTER ========== -->
-            @@include("@@autopath/partials/footer/main-dark.html")
+            <footer class="bg-dark">
+              <div class="container pb-1 pb-lg-5">
+                <div class="row content-space-t-2">
+                  <div class="col-lg-3 mb-7 mb-lg-0">
+                    <!-- Logo -->
+                    <div class="mb-5">
+                      <a class="navbar-brand" href="../index.html" aria-label="Space">
+                        <img class="navbar-brand-logo" src="../assets/svg/logos/logo-white.svg" alt="Image Description">
+                      </a>
+                    </div>
+                    <!-- End Logo -->
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1">
+                      <li><a class="link-sm link-light" href="#"><i class="bi-geo-alt-fill me-1"></i> 153 Williamson Plaza, Maggieberg</a></li>
+                      <li><a class="link-sm link-light" href="tel:1-062-109-9222"><i class="bi-telephone-inbound-fill me-1"></i> +1 (062) 109-9222</a></li>
+                    </ul>
+                    <!-- End List -->
+        
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-sm mb-7 mb-sm-0">
+                    <h5 class="text-white mb-3">Company</h5>
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1 mb-0">
+                      <li><a class="link-sm link-light" href="#">About</a></li>
+                      <li><a class="link-sm link-light" href="#">Careers <span class="badge bg-warning text-dark rounded-pill ms-1">We're hiring</span></a></li>
+                      <li><a class="link-sm link-light" href="#">Blog</a></li>
+                      <li><a class="link-sm link-light" href="#">Customers <i class="bi-box-arrow-up-right small ms-1"></i></a></li>
+                      <li><a class="link-sm link-light" href="#">Hire us</a></li>
+                    </ul>
+                    <!-- End List -->
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-sm mb-7 mb-sm-0">
+                    <h5 class="text-white mb-3">Features</h5>
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1 mb-0">
+                      <li><a class="link-sm link-light" href="#">Press <i class="bi-box-arrow-up-right small ms-1"></i></a></li>
+                      <li><a class="link-sm link-light" href="#">Release Notes</a></li>
+                      <li><a class="link-sm link-light" href="#">Integrations</a></li>
+                      <li><a class="link-sm link-light" href="#">Pricing</a></li>
+                    </ul>
+                    <!-- End List -->
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-sm mb-7 mb-sm-0">
+                    <h5 class="text-white mb-3">Documentation</h5>
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1 mb-0">
+                      <li><a class="link-sm link-light" href="#">Support</a></li>
+                      <li><a class="link-sm link-light" href="#">Docs</a></li>
+                      <li><a class="link-sm link-light" href="#">Status</a></li>
+                      <li><a class="link-sm link-light" href="#">API Reference</a></li>
+                      <li><a class="link-sm link-light" href="#">Tech Requirements</a></li>
+                    </ul>
+                    <!-- End List -->
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-sm">
+                    <h5 class="text-white mb-3">Resources</h5>
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1 mb-5">
+                      <li><a class="link-sm link-light" href="#"><i class="bi-question-circle-fill me-1"></i> Help</a></li>
+                      <li><a class="link-sm link-light" href="#"><i class="bi-person-circle me-1"></i> Your Account</a></li>
+                    </ul>
+                    <!-- End List -->
+                  </div>
+                  <!-- End Col -->
+                </div>
+                <!-- End Row -->
+
+                <div class="border-top border-white-10 my-7"></div>
+
+                <div class="row mb-7">
+                  <div class="col-sm mb-3 mb-sm-0">
+                    <!-- Socials -->
+                    <ul class="list-inline list-separator list-separator-light mb-0">
+                      <li class="list-inline-item">
+                        <a class="link-sm link-light" href="#">Privacy &amp; Policy</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a class="link-sm link-light" href="#">Terms</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a class="link-sm link-light" href="#">Site Map</a>
+                      </li>
+                    </ul>
+                    <!-- End Socials -->
+                  </div>
+
+                  <div class="col-sm-auto">
+                    <!-- Socials -->
+                    <ul class="list-inline mb-0">
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-light btn-xs btn-icon" href="#">
+                          <i class="bi-facebook"></i>
+                        </a>
+                      </li>
+          
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-light btn-xs btn-icon" href="#">
+                          <i class="bi-google"></i>
+                        </a>
+                      </li>
+          
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-light btn-xs btn-icon" href="#">
+                          <i class="bi-twitter"></i>
+                        </a>
+                      </li>
+          
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-light btn-xs btn-icon" href="#">
+                          <i class="bi-github"></i>
+                        </a>
+                      </li>
+          
+                      <li class="list-inline-item">
+                        <!-- Button Group -->
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-soft-light btn-xs dropdown-toggle" id="footerSelectLanguage" data-bs-toggle="dropdown" aria-expanded="false" data-bs-dropdown-animation>
+                            <span class="d-flex align-items-center">
+                              <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/>
+                              <span>English (US)</span>
+                            </span>
+                          </button>
+
+                          <div class="dropdown-menu" aria-labelledby="footerSelectLanguage">
+                            <a class="dropdown-item d-flex align-items-center active" href="#">
+                              <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/>
+                              <span>English (US)</span>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                              <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/de.svg" alt="Image description" width="16"/>
+                              <span>Deutsch</span>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                              <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/es.svg" alt="Image description" width="16"/>
+                              <span>Español</span>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                              <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/cn.svg" alt="Image description" width="16"/>
+                              <span>中文 (繁體)</span>
+                            </a>
+                          </div>
+                        </div>
+                        <!-- End Button Group -->
+                      </li>
+                    </ul>
+                    <!-- End Socials -->
+                  </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="w-md-85 text-lg-center mx-lg-auto">
+                  <p class="text-white-50 small">&copy; Front. 2021 Htmlstream. All rights reserved.</p>
+                  <p class="text-white-50 small">When you visit or interact with our sites, services or tools, we or our authorised service providers may use cookies for storing information to help provide you with a better, faster and safer experience and for marketing purposes.</p>
+                </div>
+                <!-- End Copyright -->
+              </div>
+            </footer>
+
             <!-- ========== END FOOTER ========== -->
           </div>
 
@@ -689,26 +1542,26 @@
                             &lt;div class="btn-group"&gt;
                               &lt;button type="button" class="btn btn-soft-light btn-xs dropdown-toggle" id="footerDarkSelectLanguage" data-bs-toggle="dropdown" aria-expanded="false" data-bs-dropdown-animation&gt;
                                 &lt;span class="d-flex align-items-center"&gt;
-                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
+                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
                                   &lt;span&gt;English (US)&lt;/span&gt;
                                 &lt;/span&gt;
                               &lt;/button&gt;
 
                               &lt;div class="dropdown-menu" aria-labelledby="footerDarkSelectLanguage"&gt;
                                 &lt;a class="dropdown-item d-flex align-items-center active" href="#"&gt;
-                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
+                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
                                   &lt;span&gt;English (US)&lt;/span&gt;
                                 &lt;/a&gt;
                                 &lt;a class="dropdown-item d-flex align-items-center" href="#"&gt;
-                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/de.svg" alt="Image description" width="16"/&gt;
+                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/de.svg" alt="Image description" width="16"/&gt;
                                   &lt;span&gt;Deutsch&lt;/span&gt;
                                 &lt;/a&gt;
                                 &lt;a class="dropdown-item d-flex align-items-center" href="#"&gt;
-                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/es.svg" alt="Image description" width="16"/&gt;
+                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/es.svg" alt="Image description" width="16"/&gt;
                                   &lt;span&gt;Español&lt;/span&gt;
                                 &lt;/a&gt;
                                 &lt;a class="dropdown-item d-flex align-items-center" href="#"&gt;
-                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/cn.svg" alt="Image description" width="16"/&gt;
+                                  &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/cn.svg" alt="Image description" width="16"/&gt;
                                   &lt;span&gt;中文 (繁體)&lt;/span&gt;
                                 &lt;/a&gt;
                               &lt;/div&gt;
@@ -737,7 +1590,6 @@
             <pre>
               <code class="language-markup" data-lang="html">
                 &lt;!-- JS Front --&gt;
-                &lt;script src="@@autopath/assets/js/hs.bs-dropdown.js"&gt;&lt;/script&gt;
 
                 &lt;!-- JS Plugins Init. --&gt;
                 &lt;script&gt;
@@ -782,7 +1634,46 @@
         <div class="tab-content" id="navTabContent4">
           <div class="tab-pane fade p-4 show active" id="nav-result4" role="tabpanel" aria-labelledby="nav-resultTab4">
             <!-- ========== FOOTER ========== -->
-            @@include("@@autopath/partials/footer/variant-1.html")
+            <footer class="container content-space-2 text-center">
+              <!-- Logo -->
+              <a class="d-inline-flex align-items-center mb-3" href="index.html" aria-label="Front">
+                <img class="brand" src="../assets/svg/logos/logo.svg" alt="Logo">
+              </a>
+              <!-- End Logo -->
+
+              <p class="fs-6 mb-1">We're part of the <a class="link" href="#">Pixeel Ltd.</a> family along with <a class="link" href="http://htmlstream.com" target="_blank">Htmlstream</a>.</p>
+              <p class="fs-6">&copy; Front. 2021 Htmlstream. All rights reserved.</p>
+
+              <!-- Socials -->
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item">
+                  <a class="btn btn-ghost-secondary btn-sm btn-icon rounded-circle" href="#">
+                    <i class="bi-facebook"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn btn-ghost-secondary btn-sm btn-icon rounded-circle" href="#">
+                    <i class="bi-slack"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn btn-ghost-secondary btn-sm btn-icon rounded-circle" href="#">
+                    <i class="bi-github"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn btn-ghost-secondary btn-sm btn-icon rounded-circle" href="#">
+                    <i class="bi-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a class="btn btn-ghost-secondary btn-sm btn-icon rounded-circle" href="#">
+                    <i class="bi-instagram"></i>
+                  </a>
+                </li>
+              </ul>
+              <!-- End Socials -->
+            </footer>
             <!-- ========== END FOOTER ========== -->
           </div>
 
@@ -866,7 +1757,45 @@
         <div class="tab-content" id="navTabContent5">
           <div class="tab-pane fade p-4 show active" id="nav-result5" role="tabpanel" aria-labelledby="nav-resultTab5">
             <!-- ========== FOOTER ========== -->
-            @@include("@@autopath/partials/footer/variant-2.html")
+            <footer class="position-absolute start-0 end-0 bottom-0">
+              <div class="container pb-5 content-space-b-sm-1">
+                <div class="row justify-content-between align-items-center">
+                  <div class="col-sm mb-3 mb-sm-0">
+                    <p class="small mb-0">&copy; Front. 2021 Htmlstream.</p>
+                  </div>
+
+                  <div class="col-sm-auto">
+                    <!-- Socials -->
+                    <ul class="list-inline mb-0">
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                          <i class="bi-facebook"></i>
+                        </a>
+                      </li>
+          
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                          <i class="bi-google"></i>
+                        </a>
+                      </li>
+          
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                          <i class="bi-twitter"></i>
+                        </a>
+                      </li>
+          
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                          <i class="bi-github"></i>
+                        </a>
+                      </li>
+                    </ul>
+                    <!-- End Socials -->
+                  </div>
+                </div>
+              </div>
+            </footer>
             <!-- ========== END FOOTER ========== -->
           </div>
 
@@ -952,7 +1881,143 @@
         <div class="tab-content" id="navTabContent6">
           <div class="tab-pane fade p-4 show active" id="nav-result6" role="tabpanel" aria-labelledby="nav-resultTab6">
             <!-- ========== FOOTER ========== -->
-            @@include("@@autopath/partials/footer/variant-3.html")
+            <footer class="border-top">
+              <div class="container">
+                <div class="row justify-content-lg-between content-space-t-2 content-space-b-lg-2">
+                  <div class="col-lg-3 mb-5">
+                    <div class="d-flex align-items-start flex-column h-100">
+                      <!-- Logo -->
+                      <a class="w-100 mb-3 mb-lg-auto" href="../demo-shop/index.html" aria-label="Front">
+                        <img class="brand" src="../assets/svg/logos/logo.svg" alt="Logo">
+                      </a>
+                      <!-- End Logo -->
+
+                      <p class="text-muted small mb-0">&copy; Front. 2021 Htmlstream.</p>
+                    </div>
+                  </div>
+
+                  <div class="col-6 col-md-4 col-lg-3 ms-lg-auto mb-5 mb-lg-0">
+                    <h5>Account</h5>
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1">
+                      <li><a class="link-sm text-secondary" href="#">Placing an order</a></li>
+                      <li><a class="link-sm text-secondary" href="#">Shipping options</a></li>
+                      <li><a class="link-sm text-secondary" href="#">Tracking a package</a></li>
+                      <li><a class="link-sm text-secondary" href="#">Country availability</a></li>
+                    </ul>
+                    <!-- End List -->
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-6 col-md-4 col-lg-3 mb-5 mb-lg-0">
+                    <h5>Company</h5>
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1">
+                      <li><a class="link-sm text-secondary" href="#">Financing</a></li>
+                      <li><a class="link-sm text-secondary" href="#">Recycling</a></li>
+                      <li><a class="link-sm text-secondary" href="#">Return policy</a></li>
+                    </ul>
+                    <!-- End List -->
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-md-4 col-lg-2 mb-5 mb-lg-0">
+                    <h5 class="mb-3">Resources</h5>
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1">
+                      <li><a class="link-sm link-secondary" href="#"><i class="bi-question-circle-fill me-1"></i> Help</a></li>
+                      <li><a class="link-sm link-secondary" href="#"><i class="bi-person-circle me-1"></i> Your Account</a></li>
+                    </ul>
+                    <!-- End List -->
+        
+                    <!-- Button Group -->
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-white btn-sm dropdown-toggle" id="footerSelectLanguage" data-bs-toggle="dropdown" aria-expanded="false" data-bs-dropdown-animation>
+                        <span class="d-flex align-items-center">
+                          <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/>
+                          <span>English (US)</span>
+                        </span>
+                      </button>
+
+                      <div class="dropdown-menu" aria-labelledby="footerSelectLanguage">
+                        <a class="dropdown-item d-flex align-items-center active" href="#">
+                          <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/>
+                          <span>English</span>
+                        </a>
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                          <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/de.svg" alt="Image description" width="16"/>
+                          <span>Deutsch</span>
+                        </a>
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                          <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/es.svg" alt="Image description" width="16"/>
+                          <span>Español</span>
+                        </a>
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                          <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/cn.svg" alt="Image description" width="16"/>
+                          <span>中文 (繁體)</span>
+                        </a>
+                      </div>
+                    </div>
+                    <!-- End Button Group -->
+                  </div>
+                  <!-- End Col -->
+                </div>
+                <!-- End Row -->
+
+                <hr class="my-0">
+
+                <div class="row align-items-sm-center content-space-1">
+                  <div class="col-sm mb-4 mb-sm-0">
+                    <!-- Socials -->
+                    <ul class="list-inline mb-0">
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                          <i class="bi-facebook"></i>
+                        </a>
+                      </li>
+
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                          <i class="bi-google"></i>
+                        </a>
+                      </li>
+
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                          <i class="bi-twitter"></i>
+                        </a>
+                      </li>
+
+                      <li class="list-inline-item">
+                        <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                          <i class="bi-github"></i>
+                        </a>
+                      </li>
+                    </ul>
+                    <!-- End Socials -->
+                  </div>
+
+                  <div class="col-sm-auto">
+                    <!-- List -->
+                    <ul class="list-inline list-separator">
+                      <li class="list-inline-item">
+                        <a class="link-sm link-secondary" href="../page-privacy.html">Privacy &amp; policy</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a class="link-sm link-secondary" href="../page-terms.html">Terms &amp; conditions</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a class="link-sm link-secondary" href="../page-careers.html">Careers</a>
+                      </li>
+                    </ul>
+                    <!-- End List -->
+                  </div>
+                </div>
+              </div>
+            </footer>
             <!-- ========== END FOOTER ========== -->
           </div>
 
@@ -1016,26 +2081,26 @@
                         &lt;div class="btn-group"&gt;
                           &lt;button type="button" class="btn btn-white btn-sm dropdown-toggle" id="footerVariant3SelectLanguage" data-bs-toggle="dropdown" aria-expanded="false" data-bs-dropdown-animation&gt;
                             &lt;span class="d-flex align-items-center"&gt;
-                              &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
+                              &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
                               &lt;span&gt;English (US)&lt;/span&gt;
                             &lt;/span&gt;
                           &lt;/button&gt;
 
                           &lt;div class="dropdown-menu" aria-labelledby="footerVariant3SelectLanguage"&gt;
                             &lt;a class="dropdown-item d-flex align-items-center active" href="#"&gt;
-                              &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
+                              &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
                               &lt;span&gt;English&lt;/span&gt;
                             &lt;/a&gt;
                             &lt;a class="dropdown-item d-flex align-items-center" href="#"&gt;
-                              &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/de.svg" alt="Image description" width="16"/&gt;
+                              &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/de.svg" alt="Image description" width="16"/&gt;
                               &lt;span&gt;Deutsch&lt;/span&gt;
                             &lt;/a&gt;
                             &lt;a class="dropdown-item d-flex align-items-center" href="#"&gt;
-                              &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/es.svg" alt="Image description" width="16"/&gt;
+                              &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/es.svg" alt="Image description" width="16"/&gt;
                               &lt;span&gt;Español&lt;/span&gt;
                             &lt;/a&gt;
                             &lt;a class="dropdown-item d-flex align-items-center" href="#"&gt;
-                              &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/cn.svg" alt="Image description" width="16"/&gt;
+                              &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/cn.svg" alt="Image description" width="16"/&gt;
                               &lt;span&gt;中文 (繁體)&lt;/span&gt;
                             &lt;/a&gt;
                           &lt;/div&gt;
@@ -1106,7 +2171,6 @@
             <pre>
               <code class="language-markup" data-lang="html">
                 &lt;!-- JS Front --&gt;
-                &lt;script src="@@autopath/assets/js/hs.bs-dropdown.js"&gt;&lt;/script&gt;
 
                 &lt;!-- JS Plugins Init. --&gt;
                 &lt;script&gt;
@@ -1151,7 +2215,22 @@
         <div class="tab-content" id="navTabContent7">
           <div class="tab-pane fade p-4 show active" id="nav-result7" role="tabpanel" aria-labelledby="nav-resultTab7">
             <!-- ========== FOOTER ========== -->
-            @@include("@@autopath/partials/footer/variant-4.html")
+            <footer class="container">
+              <div class="row justify-content-sm-between align-items-sm-center pb-5 content-space-b-sm-1">
+                <div class="col-sm mb-3 mb-sm-0">
+                  <a class="link" href="#">
+                    <i class="bi-chevron-left small ms-1"></i> Incident history
+                  </a>
+                </div>
+                <!-- End Col -->
+    
+                <div class="col-sm-auto">
+                  <p class="small mb-0">&copy; Front. 2021 Htmlstream.</p>
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+            </footer>
             <!-- ========== END FOOTER ========== -->
           </div>
 
@@ -1211,7 +2290,111 @@
         <div class="tab-content" id="navTabContent8">
           <div class="tab-pane fade p-4 show active" id="nav-result8" role="tabpanel" aria-labelledby="nav-resultTab8">
             <!-- ========== FOOTER ========== -->
-            @@include("@@autopath/partials/footer/variant-5.html")
+            <footer class="bg-dark">
+              <div class="container content-space-t-2 content-space-b-1">
+                <div class="row mb-9">
+                  <div class="col-lg-3 mb-5 mb-lg-0">
+                    <!-- Logo -->
+                    <a href="index.html" aria-label="Front">
+                      <img class="brand" src="../assets/svg/logos/logo-white.svg" alt="Logo">
+                    </a>
+                    <!-- End Logo -->
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-6 col-md-3 col-lg-2 mb-5 mb-md-0">
+                    <h5 class="text-white">Help and advice</h5>
+        
+                    <!-- Links -->
+                    <ul class="list-unstyled list-py-1 mb-0">
+                      <li><a class="link-sm link-light" href="#">Contact us</a></li>
+                      <li><a class="link-sm link-light" href="#">FAQ</a></li>
+                      <li><a class="link-sm link-light" href="#">Legal &amp; Privacy</a></li>
+                    </ul>
+                    <!-- End Links -->
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-6 col-md-3 col-lg-2 mb-5 mb-md-0">
+                    <h5 class="text-white">About us</h5>
+        
+                    <!-- Nav Links -->
+                    <ul class="list-unstyled list-py-1 mb-0">
+                      <li><a class="link-sm link-light" href="#">About Spec</a></li>
+                      <li><a class="link-sm link-light" href="#">Careers</a></li>
+                    </ul>
+                    <!-- End Nav Links -->
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-md-6 col-lg-5">
+                    <!-- Form -->
+                    <form>
+                      <h5 class="text-white">Stay up to date</h5>
+          
+                      <!-- Input Card -->
+                      <div class="input-card mt-3">
+                        <div class="input-card-form">
+                          <input type="text" class="form-control" placeholder="Enter email" aria-label="Enter email">
+                        </div>
+                        <button type="button" class="btn btn-primary">Submit</button>
+                      </div>
+                      <!-- End Input Card -->
+                    </form>
+                    <!-- End Form -->
+
+                    <p class="form-text text-white-70">New UI kits or big discounts. Never spam.</p>
+                  </div>
+                  <!-- End Col -->
+                </div>
+                <!-- End Row -->
+
+                <div class="row align-items-center">
+                  <div class="col">
+                    <p class="text-white-70 small mb-0">&copy; Front. 2021 Htmlstream. All rights reserved.</p>
+                  </div>
+                  <!-- End Col -->
+
+                  <div class="col-auto">
+                    <!-- Socials -->
+                    <ul class="list-inline mb-0">
+                      <li class="list-inline-item">
+                        <a class="btn btn-ghost-light btn-sm btn-icon" href="#">
+                          <i class="bi-facebook"></i>
+                        </a>
+                      </li>
+
+                      <li class="list-inline-item">
+                        <a class="btn btn-ghost-light btn-sm btn-icon" href="#">
+                          <i class="bi-google"></i>
+                        </a>
+                      </li>
+
+                      <li class="list-inline-item">
+                        <a class="btn btn-ghost-light btn-sm btn-icon" href="#">
+                          <i class="bi-twitter"></i>
+                        </a>
+                      </li>
+
+                      <li class="list-inline-item">
+                        <a class="btn btn-ghost-light btn-sm btn-icon" href="#">
+                          <i class="bi-github"></i>
+                        </a>
+                      </li>
+
+                      <li class="list-inline-item">
+                        <a class="btn btn-ghost-light btn-sm btn-icon" href="#">
+                          <i class="bi-linkedin"></i>
+                        </a>
+                      </li>
+                    </ul>
+                    <!-- End Socials -->
+                  </div>
+                  <!-- End Col -->
+                </div>
+                <!-- End Row -->
+              </div>
+            </footer>
             <!-- ========== END FOOTER ========== -->
           </div>
 
@@ -1360,7 +2543,15 @@
         <div class="tab-content" id="navTabContent9">
           <div class="tab-pane fade p-4 show active" id="nav-result9" role="tabpanel" aria-labelledby="nav-resultTab9">
             <!-- ========== FOOTER ========== -->
-            @@include("@@autopath/partials/footer/variant-6.html")
+            <footer class="container text-center content-space-1">
+              <!-- Logo -->
+              <a class="d-inline-flex align-items-center mb-2" href="index.html" aria-label="Front">
+                <img class="brand" src="../assets/svg/logos/logo.svg" alt="Logo">
+              </a>
+              <!-- End Logo -->
+
+              <p class="small text-muted mb-0">2021 © Htmlstream. All rights reserved.</p>
+            </footer>
             <!-- ========== END FOOTER ========== -->
           </div>
 
@@ -1413,7 +2604,399 @@
         <div class="tab-content" id="navTabContent10">
           <div class="tab-pane fade p-4 show active" id="nav-result10" role="tabpanel" aria-labelledby="nav-resultTab10">
             <!-- ========== FOOTER ========== -->
-            @@include("@@autopath/partials/footer/variant-7.html")
+            <footer class="bg-dark position-relative">
+              <div class="container content-space-b-1 position-relative z-2">
+                <div class="row justify-content-lg-between mb-10">
+                  <div class="col-lg-5 content-space-t-2 content-space-t-lg-3 mb-7 mb-lg-0">
+                    <!-- Heading -->
+                    <div class="mb-7">
+                      <h2 class="h1 text-white">We're here to help</h2>
+                      <p class="text-white-70">Find the right solution and get tailored pricing options. Or, find fast answers in our <a class="link link-warning" href="../demo-help-desk/index.html">Help Center.</a></p>
+                    </div>
+                    <!-- End Heading -->
+
+                    <div class="row">
+                      <div class="col-sm-6 mb-5">
+                        <span class="icon icon-soft-light icon-circle mb-3">
+                          <i class="bi-envelope-open-fill"></i>
+                        </span>
+                        <h4 class="text-white mb-0">General enquiries</h4>
+                        <a class="text-white-70 small" href="#">hello@example.com.com</a>
+                      </div>
+                      <!-- End Col -->
+
+                      <div class="col-sm-6 mb-5">
+                        <span class="icon icon-soft-light icon-circle mb-3">
+                          <i class="bi-telephone-inbound-fill"></i>
+                        </span>
+                        <h4 class="text-white mb-0">Phone Number</h4>
+                        <a class="text-white-70 small" href="#">+1 (062) 109-9222</a>
+                      </div>
+                      <!-- End Col -->
+
+                      <div class="col-sm-6">
+                        <span class="icon icon-soft-light icon-circle mb-3">
+                          <i class="bi-geo-alt-fill"></i>
+                        </span>
+                        <h4 class="text-white mb-0">Address</h4>
+                        <a class="text-white-70 small" href="#">153 Williamson Plaza, 09514</a>
+                      </div>
+                      <!-- End Col -->
+                    </div>
+                    <!-- End Row -->
+                  </div>
+
+                  <div class="col-lg-6 mt-lg-n10">
+                    <!-- Card -->
+                    <div class="card zi-2">
+                      <div class="card-body">
+                        <div class="mb-4">
+                          <h3>Drop us a message</h3>
+                        </div>
+
+                        <!-- Form -->
+                        <form>
+                          <div class="row gx-3">
+                            <div class="col-sm-6">
+                              <!-- Form -->
+                              <div class="mb-3">
+                                <label class="form-label visually-hidden" for="hireUsFormFirstName">First name</label>
+                                <input type="text" class="form-control form-control-lg" name="hireUsFormNameFirstName" id="hireUsFormFirstName" placeholder="First name" aria-label="First name">
+                              </div>
+                              <!-- End Form -->
+                            </div>
+                            <!-- End Col -->
+
+                            <div class="col-sm-6">
+                              <!-- Form -->
+                              <div class="mb-3">
+                                <label class="form-label visually-hidden" for="hireUsFormLasttName">Last name</label>
+                                <input type="text" class="form-control form-control-lg" name="hireUsFormNameLastName" id="hireUsFormLasttName" placeholder="Last name" aria-label="Last name">
+                              </div>
+                              <!-- End Form -->
+                            </div>
+                            <!-- End Col -->
+                          </div>
+                          <!-- End Row -->
+
+                          <!-- Form -->
+                          <div class="mb-3">
+                            <label class="form-label visually-hidden" for="hireUsFormWorkEmail">Email address</label>
+                            <input type="email" class="form-control form-control-lg" name="hireUsFormNameWorkEmail" id="hireUsFormWorkEmail" placeholder="email@site.com" aria-label="email@site.com">
+                          </div>
+                          <!-- End Form -->
+
+                          <!-- Form -->
+                          <div class="mb-3">
+                            <label class="form-label visually-hidden" for="hireUsFormCompanyName">Company name <span class="form-label-secondary">(Optional)</span></label>
+                            <input type="text" class="form-control form-control-lg" name="hireUsFormNameCompanyName" id="hireUsFormCompanyName" placeholder="Htmlstream" aria-label="Htmlstream">
+                          </div>
+                          <!-- End Form -->
+
+                          <!-- Select -->
+                          <div class="mb-3">
+                            <label class="form-label visually-hidden" for="hireUsFormCountry">Country</label>
+                            <select id="hireUsFormCountry" class="form-select form-select-lg" name="hireUsFormNameCountry" aria-label="Country">
+                              <option value="" selected disabled>Country</option>
+                              <option value="AF">Afghanistan</option>
+                              <option value="AX">Åland Islands</option>
+                              <option value="AL">Albania</option>
+                              <option value="DZ">Algeria</option>
+                              <option value="AS">American Samoa</option>
+                              <option value="AD">Andorra</option>
+                              <option value="AO">Angola</option>
+                              <option value="AI">Anguilla</option>
+                              <option value="AQ">Antarctica</option>
+                              <option value="AG">Antigua and Barbuda</option>
+                              <option value="AR">Argentina</option>
+                              <option value="AM">Armenia</option>
+                              <option value="AW">Aruba</option>
+                              <option value="AU">Australia</option>
+                              <option value="AT">Austria</option>
+                              <option value="AZ">Azerbaijan</option>
+                              <option value="BS">Bahamas</option>
+                              <option value="BH">Bahrain</option>
+                              <option value="BD">Bangladesh</option>
+                              <option value="BB">Barbados</option>
+                              <option value="BY">Belarus</option>
+                              <option value="BE">Belgium</option>
+                              <option value="BZ">Belize</option>
+                              <option value="BJ">Benin</option>
+                              <option value="BM">Bermuda</option>
+                              <option value="BT">Bhutan</option>
+                              <option value="BO">Bolivia, Plurinational State of</option>
+                              <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                              <option value="BA">Bosnia and Herzegovina</option>
+                              <option value="BW">Botswana</option>
+                              <option value="BV">Bouvet Island</option>
+                              <option value="BR">Brazil</option>
+                              <option value="IO">British Indian Ocean Territory</option>
+                              <option value="BN">Brunei Darussalam</option>
+                              <option value="BG">Bulgaria</option>
+                              <option value="BF">Burkina Faso</option>
+                              <option value="BI">Burundi</option>
+                              <option value="KH">Cambodia</option>
+                              <option value="CM">Cameroon</option>
+                              <option value="CA">Canada</option>
+                              <option value="CV">Cape Verde</option>
+                              <option value="KY">Cayman Islands</option>
+                              <option value="CF">Central African Republic</option>
+                              <option value="TD">Chad</option>
+                              <option value="CL">Chile</option>
+                              <option value="CN">China</option>
+                              <option value="CX">Christmas Island</option>
+                              <option value="CC">Cocos (Keeling) Islands</option>
+                              <option value="CO">Colombia</option>
+                              <option value="KM">Comoros</option>
+                              <option value="CG">Congo</option>
+                              <option value="CD">Congo, the Democratic Republic of the</option>
+                              <option value="CK">Cook Islands</option>
+                              <option value="CR">Costa Rica</option>
+                              <option value="CI">Côte d'Ivoire</option>
+                              <option value="HR">Croatia</option>
+                              <option value="CU">Cuba</option>
+                              <option value="CW">Curaçao</option>
+                              <option value="CY">Cyprus</option>
+                              <option value="CZ">Czech Republic</option>
+                              <option value="DK">Denmark</option>
+                              <option value="DJ">Djibouti</option>
+                              <option value="DM">Dominica</option>
+                              <option value="DO">Dominican Republic</option>
+                              <option value="EC">Ecuador</option>
+                              <option value="EG">Egypt</option>
+                              <option value="SV">El Salvador</option>
+                              <option value="GQ">Equatorial Guinea</option>
+                              <option value="ER">Eritrea</option>
+                              <option value="EE">Estonia</option>
+                              <option value="ET">Ethiopia</option>
+                              <option value="FK">Falkland Islands (Malvinas)</option>
+                              <option value="FO">Faroe Islands</option>
+                              <option value="FJ">Fiji</option>
+                              <option value="FI">Finland</option>
+                              <option value="FR">France</option>
+                              <option value="GF">French Guiana</option>
+                              <option value="PF">French Polynesia</option>
+                              <option value="TF">French Southern Territories</option>
+                              <option value="GA">Gabon</option>
+                              <option value="GM">Gambia</option>
+                              <option value="GE">Georgia</option>
+                              <option value="DE">Germany</option>
+                              <option value="GH">Ghana</option>
+                              <option value="GI">Gibraltar</option>
+                              <option value="GR">Greece</option>
+                              <option value="GL">Greenland</option>
+                              <option value="GD">Grenada</option>
+                              <option value="GP">Guadeloupe</option>
+                              <option value="GU">Guam</option>
+                              <option value="GT">Guatemala</option>
+                              <option value="GG">Guernsey</option>
+                              <option value="GN">Guinea</option>
+                              <option value="GW">Guinea-Bissau</option>
+                              <option value="GY">Guyana</option>
+                              <option value="HT">Haiti</option>
+                              <option value="HM">Heard Island and McDonald Islands</option>
+                              <option value="VA">Holy See (Vatican City State)</option>
+                              <option value="HN">Honduras</option>
+                              <option value="HK">Hong Kong</option>
+                              <option value="HU">Hungary</option>
+                              <option value="IS">Iceland</option>
+                              <option value="IN">India</option>
+                              <option value="ID">Indonesia</option>
+                              <option value="IR">Iran, Islamic Republic of</option>
+                              <option value="IQ">Iraq</option>
+                              <option value="IE">Ireland</option>
+                              <option value="IM">Isle of Man</option>
+                              <option value="IL">Israel</option>
+                              <option value="IT">Italy</option>
+                              <option value="JM">Jamaica</option>
+                              <option value="JP">Japan</option>
+                              <option value="JE">Jersey</option>
+                              <option value="JO">Jordan</option>
+                              <option value="KZ">Kazakhstan</option>
+                              <option value="KE">Kenya</option>
+                              <option value="KI">Kiribati</option>
+                              <option value="KP">Korea, Democratic People's Republic of</option>
+                              <option value="KR">Korea, Republic of</option>
+                              <option value="KW">Kuwait</option>
+                              <option value="KG">Kyrgyzstan</option>
+                              <option value="LA">Lao People's Democratic Republic</option>
+                              <option value="LV">Latvia</option>
+                              <option value="LB">Lebanon</option>
+                              <option value="LS">Lesotho</option>
+                              <option value="LR">Liberia</option>
+                              <option value="LY">Libya</option>
+                              <option value="LI">Liechtenstein</option>
+                              <option value="LT">Lithuania</option>
+                              <option value="LU">Luxembourg</option>
+                              <option value="MO">Macao</option>
+                              <option value="MK">Macedonia, the former Yugoslav Republic of</option>
+                              <option value="MG">Madagascar</option>
+                              <option value="MW">Malawi</option>
+                              <option value="MY">Malaysia</option>
+                              <option value="MV">Maldives</option>
+                              <option value="ML">Mali</option>
+                              <option value="MT">Malta</option>
+                              <option value="MH">Marshall Islands</option>
+                              <option value="MQ">Martinique</option>
+                              <option value="MR">Mauritania</option>
+                              <option value="MU">Mauritius</option>
+                              <option value="YT">Mayotte</option>
+                              <option value="MX">Mexico</option>
+                              <option value="FM">Micronesia, Federated States of</option>
+                              <option value="MD">Moldova, Republic of</option>
+                              <option value="MC">Monaco</option>
+                              <option value="MN">Mongolia</option>
+                              <option value="ME">Montenegro</option>
+                              <option value="MS">Montserrat</option>
+                              <option value="MA">Morocco</option>
+                              <option value="MZ">Mozambique</option>
+                              <option value="MM">Myanmar</option>
+                              <option value="NA">Namibia</option>
+                              <option value="NR">Nauru</option>
+                              <option value="NP">Nepal</option>
+                              <option value="NL">Netherlands</option>
+                              <option value="NC">New Caledonia</option>
+                              <option value="NZ">New Zealand</option>
+                              <option value="NI">Nicaragua</option>
+                              <option value="NE">Niger</option>
+                              <option value="NG">Nigeria</option>
+                              <option value="NU">Niue</option>
+                              <option value="NF">Norfolk Island</option>
+                              <option value="MP">Northern Mariana Islands</option>
+                              <option value="NO">Norway</option>
+                              <option value="OM">Oman</option>
+                              <option value="PK">Pakistan</option>
+                              <option value="PW">Palau</option>
+                              <option value="PS">Palestinian Territory, Occupied</option>
+                              <option value="PA">Panama</option>
+                              <option value="PG">Papua New Guinea</option>
+                              <option value="PY">Paraguay</option>
+                              <option value="PE">Peru</option>
+                              <option value="PH">Philippines</option>
+                              <option value="PN">Pitcairn</option>
+                              <option value="PL">Poland</option>
+                              <option value="PT">Portugal</option>
+                              <option value="PR">Puerto Rico</option>
+                              <option value="QA">Qatar</option>
+                              <option value="RE">Réunion</option>
+                              <option value="RO">Romania</option>
+                              <option value="RU">Russian Federation</option>
+                              <option value="RW">Rwanda</option>
+                              <option value="BL">Saint Barthélemy</option>
+                              <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                              <option value="KN">Saint Kitts and Nevis</option>
+                              <option value="LC">Saint Lucia</option>
+                              <option value="MF">Saint Martin (French part)</option>
+                              <option value="PM">Saint Pierre and Miquelon</option>
+                              <option value="VC">Saint Vincent and the Grenadines</option>
+                              <option value="WS">Samoa</option>
+                              <option value="SM">San Marino</option>
+                              <option value="ST">Sao Tome and Principe</option>
+                              <option value="SA">Saudi Arabia</option>
+                              <option value="SN">Senegal</option>
+                              <option value="RS">Serbia</option>
+                              <option value="SC">Seychelles</option>
+                              <option value="SL">Sierra Leone</option>
+                              <option value="SG">Singapore</option>
+                              <option value="SX">Sint Maarten (Dutch part)</option>
+                              <option value="SK">Slovakia</option>
+                              <option value="SI">Slovenia</option>
+                              <option value="SB">Solomon Islands</option>
+                              <option value="SO">Somalia</option>
+                              <option value="ZA">South Africa</option>
+                              <option value="GS">South Georgia and the South Sandwich Islands</option>
+                              <option value="SS">South Sudan</option>
+                              <option value="ES">Spain</option>
+                              <option value="LK">Sri Lanka</option>
+                              <option value="SD">Sudan</option>
+                              <option value="SR">Suriname</option>
+                              <option value="SJ">Svalbard and Jan Mayen</option>
+                              <option value="SZ">Swaziland</option>
+                              <option value="SE">Sweden</option>
+                              <option value="CH">Switzerland</option>
+                              <option value="SY">Syrian Arab Republic</option>
+                              <option value="TW">Taiwan, Province of China</option>
+                              <option value="TJ">Tajikistan</option>
+                              <option value="TZ">Tanzania, United Republic of</option>
+                              <option value="TH">Thailand</option>
+                              <option value="TL">Timor-Leste</option>
+                              <option value="TG">Togo</option>
+                              <option value="TK">Tokelau</option>
+                              <option value="TO">Tonga</option>
+                              <option value="TT">Trinidad and Tobago</option>
+                              <option value="TN">Tunisia</option>
+                              <option value="TR">Turkey</option>
+                              <option value="TM">Turkmenistan</option>
+                              <option value="TC">Turks and Caicos Islands</option>
+                              <option value="TV">Tuvalu</option>
+                              <option value="UG">Uganda</option>
+                              <option value="UA">Ukraine</option>
+                              <option value="AE">United Arab Emirates</option>
+                              <option value="GB">United Kingdom</option>
+                              <option value="US">United States</option>
+                              <option value="UM">United States Minor Outlying Islands</option>
+                              <option value="UY">Uruguay</option>
+                              <option value="UZ">Uzbekistan</option>
+                              <option value="VU">Vanuatu</option>
+                              <option value="VE">Venezuela, Bolivarian Republic of</option>
+                              <option value="VN">Viet Nam</option>
+                              <option value="VG">Virgin Islands, British</option>
+                              <option value="VI">Virgin Islands, U.S.</option>
+                              <option value="WF">Wallis and Futuna</option>
+                              <option value="EH">Western Sahara</option>
+                              <option value="YE">Yemen</option>
+                              <option value="ZM">Zambia</option>
+                              <option value="ZW">Zimbabwe</option>
+                            </select>
+                          </div>
+                          <!-- End Select -->
+
+                          <!-- Form -->
+                          <div class="mb-3">
+                            <label class="form-label visually-hidden" for="hireUsFormDetails">Details</label>
+                            <textarea class="form-control form-control-lg" name="hireUsFormNameDetails" id="hireUsFormDetails" placeholder="Tell us about your project" aria-label="Tell us about your project" rows="4"></textarea>
+                          </div>
+                          <!-- End Form -->
+
+                          <!-- Check -->
+                          <div class="form-check mb-4">
+                            <input type="checkbox" class="form-check-input" id="signupFormPrivacyCheck" name="signupFormPrivacyCheck" required data-msg="Please accept our Privacy Policy.">
+                            <label class="form-check-label small" for="signupFormPrivacyCheck"> By submitting this form I have read and acknowledged the <a href=../page-privacy.html>Privacy Policy</a></label>
+                          </div>
+                          <!-- End Check -->
+
+                          <div class="d-grid mb-2">
+                            <button type="submit" class="btn btn-primary btn-lg">Send inquiry</button>
+                          </div>
+
+                          <div class="text-center">
+                            <span class="form-text">We'll get back to you in 1-2 business days.</span>
+                          </div>
+                        </form>
+                        <!-- End Form -->
+                      </div>
+                    </div>
+                    <!-- End Card -->
+                  </div>
+                </div>
+
+                <div class="text-center">
+                  <!-- Logo -->
+                  <a class="d-inline-flex align-items-center mb-2" href="index.html" aria-label="Front">
+                    <img class="brand" src="../assets/svg/logos/logo-white.svg" alt="Logo">
+                  </a>
+                  <!-- End Logo -->
+
+                  <p class="text-white-70 small">&copy; Front. 2021 Htmlstream. All rights reserved.</p>
+                </div>
+              </div>
+
+              <!-- SVG Background Shape -->
+              <div class="position-absolute bottom-0 start-0 end-0">
+                <img class="img-fluid" src="../assets/svg/components/isometric-squares-light.svg" alt="Image Description">
+              </div>
+              <!-- End SVG Background Shape -->
+            </footer>
             <!-- ========== END FOOTER ========== -->
           </div>
 
@@ -1853,7 +3436,158 @@
         <div class="tab-content" id="navTabContent11">
           <div class="tab-pane fade p-4 show active" id="nav-result11" role="tabpanel" aria-labelledby="nav-resultTab11">
             <!-- ========== FOOTER ========== -->
-            @@include("@@autopath/partials/footer/variant-8.html")
+            <footer class="container content-space-2 content-space-t-lg-3">
+              <!-- Links -->
+              <div class="row mb-10">
+                <div class="col-md-3 mb-5 mb-md-0">
+                  <div class="mb-4">
+                    <h5>Get our mobile app</h5>
+                  </div>
+
+                  <div class="d-flex gap-3">          
+                    <a class="btn btn-dark btn-icon rounded-circle" href="#">
+                      <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M11.76,6.69a.52.52,0,0,1-.59-.52,4.37,4.37,0,0,1,1-2.61A4.82,4.82,0,0,1,14.64,2a.51.51,0,0,1,.63.51,4.66,4.66,0,0,1-1,2.63A4.07,4.07,0,0,1,11.76,6.69Zm5.42,5.82c0-2.72,2-3.33,2-3.92s-1.73-1.91-3.56-1.91-2.54.86-3.78.86-2.25-.86-3.79-.86A5.16,5.16,0,0,0,3.89,9.21,6.64,6.64,0,0,0,3,12.75C3,17.14,6.15,22,8.47,22c1.3,0,1.63-.85,3.42-.85S14,22,15.22,22c2.52,0,4.62-5,4.62-5.07a.51.51,0,0,0-.3-.46A4.44,4.44,0,0,1,17.18,12.51Z"/>
+                      </svg>
+                    </a>
+
+                    <a class="btn btn-dark btn-icon rounded-circle" href="#">
+                      <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M16.6,15.7l5-2.9c0.2-0.1,0.4-0.4,0.4-0.6v-0.3c0-0.3-0.1-0.5-0.4-0.6l-5-2.9L13.3,12L16.6,15.7z M12.5,11.1l3-3.4L4.4,1.1
+                          C4.2,1,4,1,3.8,1.1L12.5,11.1z M12.5,13L3.8,23c0.2,0.1,0.4,0.1,0.6,0l11.1-6.5L12.5,13z M3,2.1v19.8l8.7-9.9L3,2.1z"/>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="col-sm-4 col-md-3 mb-3 mb-sm-0">
+                  <!-- List -->
+                  <ul class="list-unstyled list-py-1">
+                    <li><a class="text-body" href="#">About</a></li>
+                    <li><a class="text-body" href="#">Services</a></li>
+                    <li><a class="text-body" href="#">Careers <span class="badge bg-warning text-dark rounded-pill ms-1">We're hiring</span></a></li>
+                    <li><a class="text-body" href="#">Blog</a></li>
+                    <li><a class="text-body" href="#">Shop with us</a></li>
+                  </ul>
+                  <!-- End List -->
+                </div>
+
+                <div class="col-sm-4 col-md-3 mb-3 mb-sm-0">
+                  <!-- List -->
+                  <ul class="list-unstyled list-py-1">
+                    <li><a class="text-body" href="#">Account</a></li>
+                    <li><a class="text-body" href="#">My tasks</a></li>
+                    <li><a class="text-body" href="#">Projects</a></li>
+                    <li><a class="text-body" href="#">Edit profile</a></li>
+                    <li><a class="text-body" href="#">Activity</a></li>
+                  </ul>
+                  <!-- End List -->
+                </div>
+
+                <div class="col-sm-4 col-md-3 mb-3 mb-sm-0">
+                  <!-- List -->
+                  <ul class="list-unstyled list-py-1">
+                    <li>
+                      <a class="text-body" href="page-pricing.html" target="_blank">
+                        Pricing
+                        <i class="bi-box-arrow-up-right small ms-1"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="text-body" href="demo-help-desk/index.html" target="_blank">
+                        Help
+                        <i class="bi-box-arrow-up-right small ms-1"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="text-body" href="page-terms.html" target="_blank">
+                        Terms &amp; Conditions
+                        <i class="bi-box-arrow-up-right small ms-1"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="text-body" href="page-privacy.html" target="_blank">
+                        Privacy &amp; Policy
+                        <i class="bi-box-arrow-up-right small ms-1"></i>
+                      </a>
+                    </li>
+                  </ul>
+                  <!-- End List -->
+                </div>
+              </div>
+              <!-- End Links -->
+
+              <div class="row align-items-sm-center">
+                <div class="col-sm mb-4 mb-sm-0">
+                  <p class="small mb-0">&copy; Front. 2021 Htmlstream. All rights reserved.</p>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-sm-auto">
+                  <!-- Socials -->
+                  <ul class="list-inline mb-0">
+                    <li class="list-inline-item">
+                      <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                        <i class="bi-facebook"></i>
+                      </a>
+                    </li>
+        
+                    <li class="list-inline-item">
+                      <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                        <i class="bi-google"></i>
+                      </a>
+                    </li>
+        
+                    <li class="list-inline-item">
+                      <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                        <i class="bi-twitter"></i>
+                      </a>
+                    </li>
+        
+                    <li class="list-inline-item">
+                      <a class="btn btn-soft-secondary btn-xs btn-icon" href="#">
+                        <i class="bi-github"></i>
+                      </a>
+                    </li>
+        
+                    <li class="list-inline-item">
+                      <!-- Button Group -->
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-soft-secondary btn-xs dropdown-toggle" id="footerSelectLanguage" data-bs-toggle="dropdown" aria-expanded="false"data-bs-dropdown-animation>
+                          <span class="d-flex align-items-center">
+                            <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/>
+                            <span>English (US)</span>
+                          </span>
+                        </button>
+
+                        <div class="dropdown-menu" aria-labelledby="footerSelectLanguage">
+                          <a class="dropdown-item d-flex align-items-center active" href="#">
+                            <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/>
+                            <span>English (US)</span>
+                          </a>
+                          <a class="dropdown-item d-flex align-items-center" href="#">
+                            <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/de.svg" alt="Image description" width="16"/>
+                            <span>Deutsch</span>
+                          </a>
+                          <a class="dropdown-item d-flex align-items-center" href="#">
+                            <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/es.svg" alt="Image description" width="16"/>
+                            <span>Español</span>
+                          </a>
+                          <a class="dropdown-item d-flex align-items-center" href="#">
+                            <img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/cn.svg" alt="Image description" width="16"/>
+                            <span>中文 (繁體)</span>
+                          </a>
+                        </div>
+                      </div>
+                      <!-- End Button Group -->
+                    </li>
+                  </ul>
+                  <!-- End Socials -->
+                </div>
+                <!-- End Col -->
+              </div>
+              <!-- End Row -->
+            </footer>
             <!-- ========== END FOOTER ========== -->
           </div>
 
@@ -1980,26 +3714,26 @@
                           &lt;div class="btn-group"&gt;
                             &lt;button type="button" class="btn btn-soft-secondary btn-xs dropdown-toggle" id="footerSelectLanguage" data-bs-toggle="dropdown" aria-expanded="false"data-bs-dropdown-animation&gt;
                               &lt;span class="d-flex align-items-center"&gt;
-                                &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
+                                &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
                                 &lt;span&gt;English (US)&lt;/span&gt;
                               &lt;/span&gt;
                             &lt;/button&gt;
 
                             &lt;div class="dropdown-menu" aria-labelledby="footerSelectLanguage"&gt;
                               &lt;a class="dropdown-item d-flex align-items-center active" href="#"&gt;
-                                &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
+                                &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="Image description" width="16"/&gt;
                                 &lt;span&gt;English (US)&lt;/span&gt;
                               &lt;/a&gt;
                               &lt;a class="dropdown-item d-flex align-items-center" href="#"&gt;
-                                &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/de.svg" alt="Image description" width="16"/&gt;
+                                &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/de.svg" alt="Image description" width="16"/&gt;
                                 &lt;span&gt;Deutsch&lt;/span&gt;
                               &lt;/a&gt;
                               &lt;a class="dropdown-item d-flex align-items-center" href="#"&gt;
-                                &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/es.svg" alt="Image description" width="16"/&gt;
+                                &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/es.svg" alt="Image description" width="16"/&gt;
                                 &lt;span&gt;Español&lt;/span&gt;
                               &lt;/a&gt;
                               &lt;a class="dropdown-item d-flex align-items-center" href="#"&gt;
-                                &lt;img class="avatar avatar-xss avatar-circle me-2" src="../node_modules/flag-icon-css/flags/1x1/cn.svg" alt="Image description" width="16"/&gt;
+                                &lt;img class="avatar avatar-xss avatar-circle me-2" src="../assets/vendor/flag-icon-css/flags/1x1/cn.svg" alt="Image description" width="16"/&gt;
                                 &lt;span&gt;中文 (繁體)&lt;/span&gt;
                               &lt;/a&gt;
                             &lt;/div&gt;
@@ -2022,7 +3756,6 @@
             <pre>
               <code class="language-markup" data-lang="html">
                 &lt;!-- JS Front --&gt;
-                &lt;script src="@@autopath/assets/js/hs.bs-dropdown.js"&gt;&lt;/script&gt;
 
                 &lt;!-- JS Plugins Init. --&gt;
                 &lt;script&gt;
@@ -2067,7 +3800,90 @@
         <div class="tab-content" id="navTabContent12">
           <div class="tab-pane fade p-4 show active" id="nav-result12" role="tabpanel" aria-labelledby="nav-resultTab12">
             <!-- ========== FOOTER ========== -->
-            @@include("@@autopath/partials/footer/variant-9.html")
+            <footer class="gradient-x-overlay-sm-primary overflow-hidden">
+              <div class="container content-space-t-2 content-space-b-1">
+                <!-- CTA -->
+                <div class="row justify-content-md-between align-items-md-center text-center text-md-start">
+                  <div class="col-md mb-3 mb-md-0">
+                    <h2 class="text-indigo">One tool for your entire team. Get started now!</h2>
+                  </div>
+
+                  <div class="col-md-auto">
+                    <div class="d-grid d-sm-flex justify-content-sm-center align-items-sm-center gap-3">
+                      <a class="btn btn-primary btn-transition" href="#">Contact sales</a>
+                      <small>or</small>
+                      <a class="btn btn-soft-dark btn-transition" href="#">See pricing <i class="bi-chevron-right small ms-1"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <!-- End CTA -->
+
+                <hr class="my-9">
+
+                <!-- Content -->
+                <div class="row">
+                  <div class="col-6 col-md-3 order-md-2 mb-7 mb-md-0">
+                    <h5>Company</h5>
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1 mb-0">
+                      <li><a class="link link-sm link-secondary" href="#">About</a></li>
+                      <li><a class="link link-sm link-secondary" href="#">Services</a></li>
+                      <li><a class="link link-sm link-secondary" href="#">Careers</a></li>
+                      <li><a class="link link-sm link-secondary" href="#">Blog</a></li>
+                    </ul>
+                    <!-- End List -->
+                  </div>
+
+                  <div class="col-6 col-md-3 order-md-3 mb-7 mb-md-0">
+                    <h5>Legal</h5>
+
+                    <!-- List -->
+                    <ul class="list-unstyled list-py-1 mb-0">
+                      <li><a class="link link-sm link-secondary" href="#">Help</a></li>
+                      <li><a class="link link-sm link-secondary" href="#">Terms &amp; Conditions</a></li>
+                      <li><a class="link link-sm link-secondary" href="#">Privacy &amp; Policy</a></li>
+                    </ul>
+                    <!-- End List -->
+                  </div>
+
+                  <div class="col-sm-6 col-md-3 order-md-1 mb-3 mb-md-0">
+                    <!-- Logo -->
+                    <a class="d-inline-flex align-items-center" href="index.html" aria-label="Front">
+                      <img class="brand" src="../assets/svg/logos/logo.svg" alt="Logo">
+                    </a>
+                    <!-- End Logo -->
+                  </div>
+
+                  <div class="col-sm-6 col-md-3 order-md-4 align-self-center align-self-md-start">
+                    <p class="small">&copy; Front. 2021 Htmlstream</p>
+                  </div>
+                </div>
+              </div>
+              <!-- End Content -->
+
+              <!-- SVG Background Shape -->
+              <figure class="position-absolute top-0 end-0 zi-n1 mt-n10 me-n10" style="width: 32rem;">
+                <svg viewBox="0 0 451 902" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M451 820C247.2 820 82 654.8 82 451C82 247.2 247.2 82 451 82" stroke="white" stroke-width="164" stroke-miterlimit="10"/>
+                </svg>
+              </figure>
+              <!-- End SVG Background Shape -->
+
+              <!-- SVG Background Shape -->
+              <figure class="position-absolute bottom-0 start-0 zi-n1 mb-n10 me-n10" style="width: 21rem;">
+                <svg viewBox="0 0 451 902" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path opacity="0.125" d="M0 82C203.8 82 369 247.2 369 451C369 654.8 203.8 820 0 820" stroke="url(#paint0_linear)" stroke-width="164" stroke-miterlimit="10"/>
+                  <defs>
+                    <linearGradient id="paint0_linear" x1="323.205" y1="785.242" x2="-97.6164" y2="56.3589" gradientUnits="userSpaceOnUse">
+                      <stop offset="0" stop-color="white" stop-opacity="0"/>
+                      <stop offset="1" stop-color="#377dff"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </figure>
+              <!-- End SVG Background Shape -->
+            </footer>
             <!-- ========== END FOOTER ========== -->
           </div>
 
@@ -2195,7 +4011,57 @@
         <div class="tab-content" id="navTabContent13">
           <div class="tab-pane fade p-4 show active" id="nav-result13" role="tabpanel" aria-labelledby="nav-resultTab13">
             <!-- ========== FOOTER ========== -->
-            @@include("@@autopath/partials/footer/variant-10.html")
+            <footer class="container content-space-1">
+              <div class="row align-items-md-center text-center text-sm-start">
+                <div class="col-md mb-3 mb-md-0">
+                  <!-- Logo -->
+                  <a href="index.html" aria-label="Front">
+                    <img class="brand" src="../assets/svg/logos/logo.svg" alt="Logo">
+                  </a>
+                  <!-- End Logo -->
+                </div>
+
+                <div class="col-sm mb-3 mb-sm-0">
+                  <!-- List -->
+                  <ul class="list-inline list-separator mb-0">
+                    <li class="list-inline-item"><a class="link-sm link-secondary" href="#">About</a></li>
+                    <li class="list-inline-item"><a class="link-sm link-secondary" href="#">Services</a></li>
+                    <li class="list-inline-item"><a class="link-sm link-secondary" href="#">Our work</a></li>
+                  </ul>
+                  <!-- End List -->
+                </div>
+
+                <div class="col-sm-auto">
+                  <!-- Socials -->
+                  <ul class="list-inline mb-0">
+                    <li class="list-inline-item">
+                      <a class="btn btn-soft-secondary btn-xs btn-icon rounded-circle" href="#">
+                        <i class="bi-facebook"></i>
+                      </a>
+                    </li>
+        
+                    <li class="list-inline-item">
+                      <a class="btn btn-soft-secondary btn-xs btn-icon rounded-circle" href="#">
+                        <i class="bi-google"></i>
+                      </a>
+                    </li>
+        
+                    <li class="list-inline-item">
+                      <a class="btn btn-soft-secondary btn-xs btn-icon rounded-circle" href="#">
+                        <i class="bi-twitter"></i>
+                      </a>
+                    </li>
+        
+                    <li class="list-inline-item">
+                      <a class="btn btn-soft-secondary btn-xs btn-icon rounded-circle" href="#">
+                        <i class="bi-github"></i>
+                      </a>
+                    </li>
+                  </ul>
+                  <!-- End Social -->
+                </div>
+              </div>
+            </footer>
             <!-- ========== END FOOTER ========== -->
           </div>
 
@@ -2511,25 +4377,37 @@
 
   <!-- ========== SECONDARY CONTENTS ========== -->
   <!-- Go To -->
-  @@include("@@autopath/partials/layouts-components/go-to.html")
+  <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;"
+     data-hs-go-to-options='{
+       "offsetTop": 700,
+       "position": {
+         "init": {
+           "right": "2rem"
+         },
+         "show": {
+           "bottom": "2rem"
+         },
+         "hide": {
+           "bottom": "-2rem"
+         }
+       }
+     }'>
+    <i class="bi-chevron-up"></i>
+  </a>
   <!-- ========== END SECONDARY CONTENTS ========== -->
 
-  <!-- JS Global Compulsory @@deleteLine:build -->
-  <script src="@@autopath/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS Global Compulsory  -->
+  <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- JS Implementing Plugins -->
-  <!-- bundlejs:vendor [@@autopath] -->
-  <script src="@@autopath/assets/vendor/hs-header/dist/hs-header.min.js"></script>
-  <script src="@@autopath/assets/vendor/hs-nav-scroller/dist/hs-nav-scroller.min.js"></script>
-  <script src="@@autopath/node_modules/list.js/dist/list.min.js"></script>
-  <script src="@@autopath/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
-  <script src="@@autopath/assets/vendor/prism/prism.js"></script>
+  <script src="../assets/vendor/hs-header/dist/hs-header.min.js"></script>
+  <script src="../assets/vendor/hs-nav-scroller/dist/hs-nav-scroller.min.js"></script>
+  <script src="../assets/vendor/list.js/dist/list.min.js"></script>
+  <script src="../assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
+  <script src="../assets/vendor/prism/prism.js"></script>
 
   <!-- JS Front -->
-  <!-- bundlejs:theme [@@autopath] -->
-  <script src="@@autopath/assets/js/hs.core.js"></script>
-  <script src="@@autopath/assets/js/hs.list.js"></script>
-  <script src="@@autopath/assets/js/hs.bs-dropdown.js"></script>
+  <script src="../assets/js/theme.min.js"></script>
 
   <!-- JS Plugins Init. -->
   <script>
@@ -2555,7 +4433,7 @@
 
       // GET JSON FILE RESULTS
       // =======================================================
-      fetch('@@autopath/assets/json/snippets-search.json')
+      fetch('../assets/json/snippets-search.json')
       .then(response => response.json())
       .then(data => {
         snippetsSearch.add(data)

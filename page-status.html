@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="@@languageDirection.lang" dir="@@if(languageDirection.isRTL){rtl}">
+<html lang="en" dir="">
 <head>
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
@@ -9,18 +9,16 @@
   <title>Status | Front - Multipurpose Responsive Template</title>
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="@@autopath/favicon.ico">
+  <link rel="shortcut icon" href="./favicon.ico">
 
   <!-- Font -->
-  <link href="@@vars.themeFont" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- CSS Implementing Plugins -->
-  <!-- bundlecss:vendor [@@autopath] -->
-  <link rel="stylesheet" href="@@autopath/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
 
   <!-- CSS Front Template -->
-  <!-- bundlecss:theme [@@autopath] @@vars.version -->
-  <link rel="stylesheet" href="@@autopath/assets/css/theme.css">
+  <link rel="stylesheet" href="./assets/css/theme.min.css">
 </head>
 
 <body>
@@ -29,8 +27,8 @@
     <div class="container">
       <nav class="navbar-nav-wrap">
         <!-- Default Logo -->
-        <a class="navbar-brand" href="@@autopath/index.html" aria-label="Front">
-          <img class="navbar-brand-logo" src="@@autopath/assets/svg/logos/logo.svg" alt="Logo">
+        <a class="navbar-brand" href="./index.html" aria-label="Front">
+          <img class="navbar-brand-logo" src="./assets/svg/logos/logo.svg" alt="Logo">
         </a>
         <!-- End Default Logo -->
 
@@ -41,7 +39,7 @@
 
             <div id="signUpDropdown" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarUpdatesDropdown" style="min-width: 17rem;">
               <!-- Link -->
-              <a class="navbar-dropdown-menu-media-link" href="@@autopath/documentation/index.html">
+              <a class="navbar-dropdown-menu-media-link" href="./documentation/index.html">
                 <div class="d-flex">
                   <div class="flex-shrink-0">
                     <i class="bi-envelope-open fs-3"></i>
@@ -58,7 +56,7 @@
               <div class="dropdown-divider"></div>
 
               <!-- Link -->
-              <a class="navbar-dropdown-menu-media-link" href="@@autopath/snippets/index.html">
+              <a class="navbar-dropdown-menu-media-link" href="./snippets/index.html">
                 <div class="d-flex">
                   <div class="flex-shrink-0">
                     <i class="bi-slack fs-3"></i>
@@ -242,19 +240,31 @@
   <!-- ========== END MAIN CONTENT ========== -->
 
   <!-- ========== FOOTER ========== -->
-  @@include("@@autopath/partials/footer/variant-4.html")
+  <footer class="container">
+    <div class="row justify-content-sm-between align-items-sm-center pb-5 content-space-b-sm-1">
+      <div class="col-sm mb-3 mb-sm-0">
+        <a class="link" href="#">
+          <i class="bi-chevron-left small ms-1"></i> Incident history
+        </a>
+      </div>
+      <!-- End Col -->
+    
+      <div class="col-sm-auto">
+        <p class="small mb-0">&copy; Front. 2021 Htmlstream.</p>
+      </div>
+      <!-- End Col -->
+    </div>
+    <!-- End Row -->
+  </footer>
   <!-- ========== END FOOTER ========== -->
 
-  <!-- JS Global Compulsory @@deleteLine:build -->
-  <script src="@@autopath/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS Global Compulsory  -->
+  <script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- JS Implementing Plugins -->
-  <!-- bundlejs:vendor [@@autopath] -->
 
   <!-- JS Front -->
-  <!-- bundlejs:theme [@@autopath] -->
-  <script src="@@autopath/assets/js/hs.core.js"></script>
-  <script src="@@autopath/assets/js/hs.bs-dropdown.js"></script>
+  <script src="./assets/js/theme.min.js"></script>
 
   <!-- JS Plugins Init. -->
   <script>

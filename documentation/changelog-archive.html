@@ -9,32 +9,568 @@
   <title>Changelog - Documentation | Front - Multipurpose Responsive Template</title>
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="@@autopath/favicon.ico">
+  <link rel="shortcut icon" href="../favicon.ico">
 
   <!-- Font -->
-  <link href="@@vars.themeFont" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- CSS Implementing Plugins -->
-  <!-- bundlecss:vendor [@@autopath] -->
-  <link rel="stylesheet" href="@@autopath/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
 
   <!-- CSS Front Template -->
-  <!-- bundlecss:theme [@@autopath] @@vars.version -->
-  <link rel="stylesheet" href="@@autopath/assets/css/theme.css">
-  <link rel="stylesheet" href="@@autopath/assets/css/docs.css">
+  <link rel="stylesheet" href="../assets/css/theme.min.css">
+  <link rel="stylesheet" href="../assets/css/docs.min.css">
 </head>
 
 <body class="navbar-sidebar-aside-lg">
   <!-- ========== HEADER ========== -->
-  @@include("@@autopath/partials/docs/docs-navbar.html")
+  <header id="header" class="navbar navbar-expand navbar-fixed navbar-end navbar-light navbar-sticky-lg-top bg-white">
+    <div class="container-fluid">
+      <nav class="navbar-nav-wrap">
+        <div class="row flex-grow-1">
+          <!-- Default Logo -->
+          <div class="docs-navbar-sidebar-container d-flex align-items-center mb-2 mb-lg-0">
+            <a class="navbar-brand" href="../documentation/index.html" aria-label="Space">
+              <img class="navbar-brand-logo" src="../assets/svg/logos/logo.svg" alt="Logo">
+            </a>
+            <a href="../documentation/changelog.html">
+              <span class="badge bg-soft-primary text-primary">v4.3.1</span>
+            </a>
+          </div>
+          <!-- End Default Logo -->
+
+          <div class="col-md px-lg-0">
+            <div class="d-flex justify-content-between align-items-center px-lg-5 px-xl-10">
+              <div class="d-none d-md-block">
+                <!-- Search Form -->
+                <form id="docsSearch" class="position-relative"
+                      data-hs-list-options='{
+                       "searchMenu": true,
+                       "keyboard": true,
+                       "item": "searchTemplate",
+                       "valueNames": ["component", "category", {"name": "link", "attr": "href"}],
+                       "empty": "#searchNoResults"
+                     }'>
+                  <!-- Input Group -->
+                  <div class="input-group input-group-merge navbar-input-group">
+                    <div class="input-group-prepend input-group-text">
+                      <i class="bi-search"></i>
+                    </div>
+
+                    <input type="search" class="search form-control form-control-sm" placeholder="Search in docs" aria-label="Search in docs">
+
+                    <a class="input-group-append input-group-text" href="javascript:;">
+                      <i id="clearSearchResultsIcon" class="bi-x" style="display: none;"></i>
+                    </a>
+                  </div>
+                  <!-- End Input Group -->
+
+                  <!-- List -->
+                  <div class="list dropdown-menu navbar-dropdown-menu-borderless w-100 overflow-auto" style="max-height: 16rem;"></div>
+                  <!-- End List -->
+
+                  <!-- Empty -->
+                  <div id="searchNoResults" style="display: none;">
+                    <div class="text-center p-4">
+                      <img class="mb-3" src="../assets/svg/illustrations/oc-error.svg" alt="Image Description" style="width: 10rem;">
+                      <p class="mb-0">No Results</p>
+                    </div>
+                  </div>
+                  <!-- End Empty -->
+                </form>
+                <!-- End Search Form -->
+
+                <!-- List Item Template -->
+                <div class="d-none">
+                  <div id="searchTemplate" class="dropdown-item">
+                    <a class="d-block link" href="#">
+                      <span class="category d-block fw-normal text-muted mb-1"></span>
+                      <span class="component text-dark"></span>
+                    </a>
+                  </div>
+                </div>
+                <!-- End List Item Template -->
+              </div>
+
+              <!-- Navbar -->
+              <ul class="navbar-nav p-0">
+                <li class="nav-item">
+                  <a class="btn btn-ghost-secondary btn-sm" href="https://htmlstream.com/contact-us" target="_blank">
+                    Get Support <i class="bi-box-arrow-up-right ms-1"></i>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-primary btn-sm" href="../index.html">
+                    <i class="bi-eye me-1"></i> Preview Demo
+                  </a>
+                </li>
+              </ul>
+              <!-- End Navbar -->
+            </div>
+          </div>
+          <!-- End Col -->
+        </div>
+        <!-- End Row -->
+      </nav>
+    </div>
+  </header>
   <!-- ========== END HEADER ========== -->
 
   <!-- ========== MAIN CONTENT ========== -->
   <main id="content" role="main">
     <!-- Navbar -->
-    @@include("@@autopath/partials/docs/docs-sidebar.html", {
-      "link": "changelog.html"
-    })
+    <nav class="js-nav-scroller navbar navbar-expand-lg navbar-sidebar navbar-vertical navbar-light bg-white border-end"
+          data-hs-nav-scroller-options='{
+            "type": "vertical",
+            "target": ".navbar-nav .active",
+            "offset": 80
+           }'>
+      <!-- Navbar Toggle -->
+      <button type="button" class="navbar-toggler btn btn-white d-grid w-100" data-bs-toggle="collapse" data-bs-target="#navbarVerticalNavMenu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbarVerticalNavMenu">
+        <span class="d-flex justify-content-between align-items-center">
+          <span class="h3 mb-0">Nav menu</span>
+
+          <span class="navbar-toggler-default">
+            <i class="bi-list"></i>
+          </span>
+
+          <span class="navbar-toggler-toggled">
+            <i class="bi-x"></i>
+          </span>
+        </span>
+      </button>
+      <!-- End Navbar Toggle -->
+
+      <!-- Navbar Collapse -->
+      <div id="navbarVerticalNavMenu" class="collapse navbar-collapse">
+        <div class="navbar-brand-wrapper border-end" style="height: auto;">
+          <!-- Default Logo -->
+          <div class="d-flex align-items-center mb-3">
+            <a class="navbar-brand" href="../documentation/index.html" aria-label="Space">
+              <img class="navbar-brand-logo" src="../assets/svg/logos/logo.svg" alt="Logo">
+            </a>
+            <a class="navbar-brand-badge" href="../documentation/changelog.html">
+              <span class="badge bg-soft-primary text-primary ms-2">v4.3.1</span>
+            </a>
+          </div>
+          <!-- End Default Logo -->
+      
+          <!-- Nav -->
+          <ul class="nav nav-segment nav-fill nav-justified">
+            <li class="nav-item">
+              <a class="nav-link active" href="../documentation/index.html">Docs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../snippets/index.html">Snippets</a>
+            </li>
+          </ul>
+          <!-- End Nav -->
+        </div>
+
+        <div class="docs-navbar-sidebar-aside-body navbar-sidebar-aside-body">
+          <ul id="navbarSettings" class="navbar-nav nav nav-vertical nav-tabs nav-tabs-borderless nav-sm">
+            <li class="nav-item">
+              <span class="nav-subtitle">Documentation</span>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/index.html">Introduction</a>
+            </li>
+
+            <li class="nav-item my-2 my-lg-5"></li>
+
+            <li class="nav-item">
+              <span class="nav-subtitle">Getting started</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/getting-started.html">Getting Started</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/gulp.html">Gulp</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/customization.html">Customization</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/credits.html">Credits</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="../documentation/changelog.html">Changelog</a>
+            </li>
+
+            <li class="nav-item my-2 my-lg-5"></li>
+
+            <li class="nav-item">
+              <span class="nav-subtitle">Design &amp; Graphics</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/bs-icons.html">Bootstrap Icons</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/duotone-icons.html">Duotone Icons</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/illustrations.html">Illustrations</a>
+            </li>
+
+            <li class="nav-item my-2 my-lg-5"></li>
+
+            <li class="nav-item">
+              <span class="nav-subtitle">Components</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/accordion.html">Accordion</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/alerts.html">Alerts</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/avatars.html">Avatars</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/badge.html">Badge</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/breadcrumb.html">Breadcrumb</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/buttons.html">Buttons</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/cards.html">Cards</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/collapse.html">Collapse</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/column-divider.html">Column Divider</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/devices.html">Devices</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/divider.html">Divider</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/dropdowns.html">Dropdowns</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/icons.html">Icons</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/list-group.html">List Group</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/lists.html">Lists</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/legend-indicator.html">Legend Indicator</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/modal.html">Modal</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/offcanvas.html">Offcanvas</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/page-header.html">Page Header</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/pagination.html">Pagination</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/popovers.html">Popovers</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/progress.html">Progress</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/profile.html">Profile</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/shapes.html">Shapes</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/spinners.html">Spinners</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/steps.html">Steps</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/tab.html">Tab</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/tables.html">Tables</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/text-highlight.html">Text Highlight</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/toasts.html">Toasts</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/tooltips.html">Tooltips</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/typography.html">Typography</a>
+            </li>
+
+            <li class="nav-item my-2 my-lg-5"></li>
+
+            <li class="nav-item">
+              <small class="nav-subtitle d-block">Navbars</small>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/navbar.html">Navbar</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/navs.html">Navs</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/mega-menu.html">Mega Menu</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/scrollspy.html">Scrollspy</a>
+            </li>
+
+            <li class="nav-item my-2 my-lg-5"></li>
+
+            <li class="nav-item">
+              <small class="nav-subtitle d-block">Basic forms</small>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/basic-forms.html">Basic Forms</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/checks-and-switches.html">Checks &amp; Switches</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/input-group.html">Input Group</a>
+            </li>
+
+            <li class="nav-item my-2 my-lg-5"></li>
+
+            <li class="nav-item">
+              <small class="nav-subtitle">Advanced Forms</small>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/select.html">Advanced Select</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/file-attachments.html">File Attachments</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/dropzone.html">Drag’ n’ Drop File Uploads</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/quill.html">WYSIWYG Editor</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/quantity-counter.html">Quantity Counter</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/input-mask.html">Input Mask</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/step-forms.html">Step Forms (Wizards)</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/range-slider.html">Range Slider (noUiSlider)</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/add-field.html">Add Field</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/toggle-password.html">Toggle Password</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/count-characters.html">Count Characters</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/toggle-switch.html">Toggle Switch</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/toggle-state.html">Toggle State</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/switch.html">Switch</a>
+            </li>
+
+            <li class="nav-item my-2 my-lg-5"></li>
+
+            <li class="nav-item">
+              <small class="nav-subtitle">Media</small>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/fslightbox.html">Fullscreen Lightbox</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/video-bg.html">Video Background</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/video-player.html">Video Player</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/swiper.html">Swiper</a>
+            </li>
+
+            <li class="nav-item my-2 my-lg-5"></li>
+
+            <li class="nav-item">
+              <small class="nav-subtitle">Others</small>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/maps-leaflet.html">Maps (Leaflet)</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/chartjs.html">Chart.js</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/circles.html">Circles.js (Pie Chart)</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/sticky-block.html">Sticky Block</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/countdown.html">Countdown</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/sorting.html">Sorting (Shuffle.js)</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/go-to.html">Go To</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/show-animation.html">Show Animation</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/typedjs.html">Typed.js</a>
+            </li>
+
+            <li class="nav-item my-2 my-lg-5"></li>
+
+            <li class="nav-item">
+              <small class="nav-subtitle d-block">Utilities</small>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/backgrounds.html">Backgrounds</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/borders.html">Borders</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/colors.html">Colors</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/links.html">Links</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/position.html">Position</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/rotations.html">Rotations</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/shadows.html">Shadows</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/sizing.html">Sizing</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/spacing.html">Spacing</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../documentation/z-index.html">Z-index</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- End Navbar Collapse -->
+    </nav>
     <!-- End Navbar -->
 
     <!-- Content -->
@@ -44,7 +580,7 @@
 
         <div class="mb-3">
           <span class="badge bg-soft-danger text-danger py-2 px-3 me-2">Fixed</span>
-          <a class="link" href="@@autopath/documentation/progress-animation.html">Progress Animation</a> Fixed animation for horizontal progress bar on load the page.
+          <a class="link" href="../documentation/progress-animation.html">Progress Animation</a> Fixed animation for horizontal progress bar on load the page.
         </div>
 
         <div class="mb-3">
@@ -54,7 +590,7 @@
 
         <div class="mb-3">
           <span class="badge bg-soft-info text-info py-2 px-3 me-2">Enhanced</span>
-          <a class="link" href="@@autopath/page-login.html">Sign In</a> and <a class="link" href="@@autopath/page-signup.html">Sign Up</a> layout pages
+          <a class="link" href="../page-login.html">Sign In</a> and <a class="link" href="../page-signup.html">Sign Up</a> layout pages
         </div>
 
         <div class="mb-3">
@@ -86,68 +622,68 @@
 
         <h3 class="hs-docs-heading">Introducing new powerful Gulp Toolkit</h3>
 
-        <p>Over the past years, we've been asked many times how to automatically prepare the optimized build package, auto path detection, passing variables over HTML and SVG files and lots of others. We are happy to introduce the new powerful <strong>Gulp Toolkit</strong> which covers all and even more. Learn more at <a class="link" href="@@autopath/documentation/gulp.html">Gulp Page</a> for more details.</p>
+        <p>Over the past years, we've been asked many times how to automatically prepare the optimized build package, auto path detection, passing variables over HTML and SVG files and lots of others. We are happy to introduce the new powerful <strong>Gulp Toolkit</strong> which covers all and even more. Learn more at <a class="link" href="../documentation/gulp.html">Gulp Page</a> for more details.</p>
 
-        <p>Please note, <code>v3.3.0</code> comes with a new <a class="link" href="@@autopath/documentation/index.html#file-structure">File Structure</a> including with a few global changes to make the development process fast and scalable than ever before in Front.</p>
-
-        <div class="mb-3">
-          <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/documentation/gulp.html">Gulp Toolkit</a>
-        </div>
+        <p>Please note, <code>v3.3.0</code> comes with a new <a class="link" href="../documentation/index.html#file-structure">File Structure</a> including with a few global changes to make the development process fast and scalable than ever before in Front.</p>
 
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/demo-real-estate/index.html">Real Estate</a> (5 Pages)
+          <a class="link" href="../documentation/gulp.html">Gulp Toolkit</a>
+        </div>
+
+        <div class="mb-3">
+          <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
+          <a class="link" href="../demo-real-estate/index.html">Real Estate</a> (5 Pages)
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/demo-jobs/index.html">Jobs</a> (9 Pages)
+          <a class="link" href="../demo-jobs/index.html">Jobs</a> (9 Pages)
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/index.html">Sign Up</a> modal
+          <a class="link" href="../index.html">Sign Up</a> modal
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/demo-app-marketplace/submit-app.html">Submit app</a> page for the App Marketplace demo
+          <a class="link" href="../demo-app-marketplace/submit-app.html">Submit app</a> page for the App Marketplace demo
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/documentation/count-characters.html">Count characters</a> plugin
+          <a class="link" href="../documentation/count-characters.html">Count characters</a> plugin
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/documentation/cards.html#card-no-gutters">Card no gutters</a> option
+          <a class="link" href="../documentation/cards.html#card-no-gutters">Card no gutters</a> option
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/documentation/navs.html#nav-scroller">HS Nav Scroller</a> plugin
+          <a class="link" href="../documentation/navs.html#nav-scroller">HS Nav Scroller</a> plugin
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/documentation/step-form.html#methods">HS Step Form</a> slide to top option
+          <a class="link" href="../documentation/step-form.html#methods">HS Step Form</a> slide to top option
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/documentation/profile-cover.html">Profile cover</a> component
+          <a class="link" href="../documentation/profile-cover.html">Profile cover</a> component
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/documentation/page-header.html">Page Header</a> component
+          <a class="link" href="../documentation/page-header.html">Page Header</a> component
         </div>
 
         <div class="mb-3">
           <span class="badge bg-soft-danger text-danger py-2 px-3 me-2">Fixed</span>
-          <a class="link" href="@@autopath/documentation/forms.html#checkbox-bookmark">Checkbox Bookmark</a> component
+          <a class="link" href="../documentation/forms.html#checkbox-bookmark">Checkbox Bookmark</a> component
         </div>
 
         <div class="mb-3">
@@ -172,12 +708,12 @@
 
         <div class="mb-3">
           <span class="badge bg-soft-info text-info py-2 px-3 me-2">Enhanced</span>
-          <a class="link" href="@@autopath/documentation/css-divider.html">CSS divider</a>
+          <a class="link" href="../documentation/css-divider.html">CSS divider</a>
         </div>
 
         <div class="mb-3">
           <span class="badge bg-soft-info text-info py-2 px-3 me-2">Enhanced</span>
-          <a class="link" href="@@autopath/documentation/typography.html#blockquotes">Blockquote</a> styles
+          <a class="link" href="../documentation/typography.html#blockquotes">Blockquote</a> styles
         </div>
 
         <div class="mb-3">
@@ -202,22 +738,22 @@
 
         <div class="mb-3">
           <span class="badge bg-soft-success text-success py-2 px-3 me-2">Updated</span>
-          <a class="link" href="@@autopath/documentation/file-attach.html">File attach</a> new options added
+          <a class="link" href="../documentation/file-attach.html">File attach</a> new options added
         </div>
 
         <div class="mb-3">
           <span class="badge bg-soft-success text-success py-2 px-3 me-2">Updated</span>
-          <a class="link" href="@@autopath/documentation/typedjs.html">Typedjs</a> now via data attributes
+          <a class="link" href="../documentation/typedjs.html">Typedjs</a> now via data attributes
         </div>
 
         <div class="mb-3">
           <span class="badge bg-soft-success text-success py-2 px-3 me-2">Updated</span>
-          <a class="link" href="@@autopath/documentation/range-slider.html">Ion Range Slider</a>
+          <a class="link" href="../documentation/range-slider.html">Ion Range Slider</a>
         </div>
 
         <div class="mb-3">
           <span class="badge bg-soft-success text-success py-2 px-3 me-2">Updated</span>
-          <a class="link" href="@@autopath/documentation/fancybox.html">Fancybox</a>
+          <a class="link" href="../documentation/fancybox.html">Fancybox</a>
         </div>
 
         <div class="mt-5">
@@ -409,7 +945,7 @@
 
         <div class="mb-3">
           <span class="badge bg-soft-info text-info py-2 px-3 me-2">Enhanced</span>
-          <a class="link" href="@@autopath/account-overview.html">Account</a> pages on mobile screen
+          <a class="link" href="../account-overview.html">Account</a> pages on mobile screen
         </div>
 
         <div class="mt-5">
@@ -427,7 +963,7 @@
 
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/account-overview.html">Account</a> (9 Pages)
+          <a class="link" href="../account-overview.html">Account</a> (9 Pages)
         </div>
 
         <div class="mb-3">
@@ -552,12 +1088,12 @@
 
         <div class="mb-3">
           <span class="badge bg-soft-info text-info py-2 px-3 me-2">Enhanced</span>
-          Video background in <a class="link" href="@@autopath/classic-studio.html">Classic Studio</a> improved on smaller devices
+          Video background in <a class="link" href="../classic-studio.html">Classic Studio</a> improved on smaller devices
         </div>
 
         <div class="mb-3">
           <span class="badge bg-soft-info text-info py-2 px-3 me-2">Enhanced</span>
-          Hero in <a class="link" href="@@autopath/demo-help-desk/index.html">Help Desk</a> page
+          Hero in <a class="link" href="../demo-help-desk/index.html">Help Desk</a> page
         </div>
 
         <div class="mb-3">
@@ -698,7 +1234,7 @@
 
         <div class="mb-3">
           <span class="badge bg-soft-info text-info py-2 px-3 me-2">Enhanced</span>
-          Updated illustrations in <a class="link" href="@@autopath/demo-course/index.html">Course</a>, <a class="link" href="@@autopath/page-error-404.html">Error 404</a>, <a class="link" href="@@autopath/page-maintenance-mode.html">Maintenance Mode</a>, <a class="link" href="@@autopath/page-coming-soon.html">Coming Soon</a> and <a class="link" href="@@autopath/shop-empty-cart.html">Cart Empty</a> pages
+          Updated illustrations in <a class="link" href="../demo-course/index.html">Course</a>, <a class="link" href="../page-error-404.html">Error 404</a>, <a class="link" href="../page-maintenance-mode.html">Maintenance Mode</a>, <a class="link" href="../page-coming-soon.html">Coming Soon</a> and <a class="link" href="../shop-empty-cart.html">Cart Empty</a> pages
         </div>
 
         <div class="mb-3">
@@ -875,7 +1411,7 @@
 
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/demo-course/index.html">Course</a> demo - comes with three additional inner pages
+          <a class="link" href="../demo-course/index.html">Course</a> demo - comes with three additional inner pages
         </div>
 
         <div class="mb-3">
@@ -975,7 +1511,7 @@
         
         <div class="mb-3">
           <span class="badge bg-soft-info text-info py-2 px-3 me-2">Enhanced</span>
-          Video background resolution on smaller devices in the <a class="link" href="@@autopath/classic-studio.html">Classic Studio</a> home page
+          Video background resolution on smaller devices in the <a class="link" href="../classic-studio.html">Classic Studio</a> home page
         </div>
         
         <div class="mb-3">
@@ -3309,7 +3845,7 @@
 
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/onepage-corporate.html">Onepage Corporate</a> home page
+          <a class="link" href="../onepage-corporate.html">Onepage Corporate</a> home page
         </div>
 
         <div class="mb-3">
@@ -3329,7 +3865,7 @@
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/blog-article.html">Blog - Single Article</a> page
+          <a class="link" href="../blog-article.html">Blog - Single Article</a> page
         </div>
         
         <div class="mb-3">
@@ -3379,7 +3915,7 @@
 
         <div class="mb-3">
           <span class="badge bg-soft-info text-info py-2 px-3 me-2">Enhanced</span>
-          <a class="link" href="@@autopath/demo-app-marketplace/app-description.html">App Description</a> Pricing table
+          <a class="link" href="../demo-app-marketplace/app-description.html">App Description</a> Pricing table
         </div>
 
         <div class="mb-3">
@@ -3446,17 +3982,17 @@
 
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/demo-app-marketplace/index.html">App Marketplace</a> demo page
+          <a class="link" href="../demo-app-marketplace/index.html">App Marketplace</a> demo page
         </div>
 
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/demo-help-desk/index.html">Help Desk</a> page moved to the <code>app-marketplace/</code> folder as a stand-alone demo
+          <a class="link" href="../demo-help-desk/index.html">Help Desk</a> page moved to the <code>app-marketplace/</code> folder as a stand-alone demo
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/demo-help-desk/listing.html">Help Listing</a> page
+          <a class="link" href="../demo-help-desk/listing.html">Help Listing</a> page
         </div>
         
         <div class="mb-3">
@@ -3480,52 +4016,52 @@
 
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/classic-studio.html">Classic Studio</a> home page
+          <a class="link" href="../classic-studio.html">Classic Studio</a> home page
         </div>
 
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/app-ui-kit.html">App UI kit</a> home page
+          <a class="link" href="../app-ui-kit.html">App UI kit</a> home page
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/page-about-agency.html">About Agency</a> inner page redesigned
+          <a class="link" href="../page-about-agency.html">About Agency</a> inner page redesigned
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/page-services-agency.html">Services Agency</a> inner page redesigned
+          <a class="link" href="../page-services-agency.html">Services Agency</a> inner page redesigned
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          Shop <a class="link" href="@@autopath/shop-categories.html">Categories</a> demo pages
+          Shop <a class="link" href="../shop-categories.html">Categories</a> demo pages
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          Shop <a class="link" href="@@autopath/shop-categories-sidebar.html">Categories sidebar</a> demo pages
+          Shop <a class="link" href="../shop-categories-sidebar.html">Categories sidebar</a> demo pages
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          Shop <a class="link" href="@@autopath/shop-products-grid.html">Products grid</a> demo pages
+          Shop <a class="link" href="../shop-products-grid.html">Products grid</a> demo pages
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          Shop <a class="link" href="@@autopath/shop-products-list.html">Products list</a> demo pages
+          Shop <a class="link" href="../shop-products-list.html">Products list</a> demo pages
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          Shop <a class="link" href="@@autopath/shop-empty-cart.html">Empty cart</a> demo pages
+          Shop <a class="link" href="../shop-empty-cart.html">Empty cart</a> demo pages
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          Shop <a class="link" href="@@autopath/shop-order-completed.html">Order completed</a> demo pages
+          Shop <a class="link" href="../shop-order-completed.html">Order completed</a> demo pages
         </div>
         
         <div class="mb-3">
@@ -3595,7 +4131,7 @@
 
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/shop-classic.html">Shop</a> demo pages redesigned
+          <a class="link" href="../shop-classic.html">Shop</a> demo pages redesigned
         </div>
 
         <div class="mb-3">
@@ -3673,12 +4209,12 @@
 
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/app-saas.html">App SaaS</a> home page
+          <a class="link" href="../app-saas.html">App SaaS</a> home page
         </div>
 
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/app-workflow.html">App Workflow</a> home page
+          <a class="link" href="../app-workflow.html">App Workflow</a> home page
         </div>
         
         <div class="mb-3">
@@ -3698,12 +4234,12 @@
         
         <div class="mb-3">
           <span class="badge bg-soft-danger text-danger py-2 px-3 me-2">Fixed</span>
-          Hero block mockup overlaying in <a class="link" href="@@autopath/classic-consulting.html">Classic-consulting</a> page
+          Hero block mockup overlaying in <a class="link" href="../classic-consulting.html">Classic-consulting</a> page
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-danger text-danger py-2 px-3 me-2">Fixed</span>
-          Quotation mark in <a class="link" href="@@autopath/blog-article.html">Single article classic Blog</a> page
+          Quotation mark in <a class="link" href="../blog-article.html">Single article classic Blog</a> page
         </div>
         
         <div class="mb-3">
@@ -3801,7 +4337,7 @@
 
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/app-payment.html">App Payment</a> home page
+          <a class="link" href="../app-payment.html">App Payment</a> home page
         </div>
 
         <div class="mb-3">
@@ -3811,12 +4347,12 @@
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/page-customers.html">Customers</a> inner page
+          <a class="link" href="../page-customers.html">Customers</a> inner page
         </div>
         
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/page-customer-story.html">Customer story</a> inner page
+          <a class="link" href="../page-customer-story.html">Customer story</a> inner page
         </div>
         
         <div class="mb-3">
@@ -3901,7 +4437,7 @@
 
         <div class="mb-3">
           <span class="badge bg-soft-primary text-primary py-2 px-3 me-2">New</span>
-          <a class="link" href="@@autopath/page-status.html">Status</a> page
+          <a class="link" href="../page-status.html">Status</a> page
         </div>
 
         <div class="mb-3">
@@ -5235,23 +5771,36 @@
 
   <!-- ========== SECONDARY CONTENTS ========== -->
   <!-- Go To -->
-  @@include("@@autopath/partials/layouts-components/go-to.html")
+  <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;"
+     data-hs-go-to-options='{
+       "offsetTop": 700,
+       "position": {
+         "init": {
+           "right": "2rem"
+         },
+         "show": {
+           "bottom": "2rem"
+         },
+         "hide": {
+           "bottom": "-2rem"
+         }
+       }
+     }'>
+    <i class="bi-chevron-up"></i>
+  </a>
   <!-- ========== END SECONDARY CONTENTS ========== -->
 
-  <!-- JS Global Compulsory @@deleteLine:build -->
-  <script src="@@autopath/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS Global Compulsory  -->
+  <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- JS Implementing Plugins -->
-  <!-- bundlejs:vendor [@@autopath] -->
-  <script src="@@autopath/assets/vendor/hs-header/dist/hs-header.min.js"></script>
-  <script src="@@autopath/node_modules/list.js/dist/list.min.js"></script>
-  <script src="@@autopath/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
-  <script src="@@autopath/assets/vendor/prism/prism.js"></script>
+  <script src="../assets/vendor/hs-header/dist/hs-header.min.js"></script>
+  <script src="../assets/vendor/list.js/dist/list.min.js"></script>
+  <script src="../assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
+  <script src="../assets/vendor/prism/prism.js"></script>
 
   <!-- JS Front -->
-  <!-- bundlejs:theme [@@autopath] -->
-  <script src="@@autopath/assets/js/hs.core.js"></script>
-  <script src="@@autopath/assets/js/hs.list.js"></script>
+  <script src="../assets/js/theme.min.js"></script>
 
   <!-- JS Plugins Init. -->
   <script>
@@ -5268,7 +5817,7 @@
 
       // GET JSON FILE RESULTS
       // =======================================================
-      fetch('@@autopath/assets/json/docs-search.json')
+      fetch('../assets/json/docs-search.json')
       .then(response => response.json())
       .then(data => {
         docsSearch.getItem(0).add(data)

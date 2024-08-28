@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="@@languageDirection.lang" dir="@@if(languageDirection.isRTL){rtl}">
+<html lang="en" dir="">
 <head>
   <!-- Required Meta Tags Always Come First -->
   <meta charset="utf-8">
@@ -9,18 +9,16 @@
   <title>Invoice | Front - Multipurpose Responsive Template</title>
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="@@autopath/favicon.ico">
+  <link rel="shortcut icon" href="./favicon.ico">
 
   <!-- Font -->
-  <link href="@@vars.themeFont" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- CSS Implementing Plugins -->
-  <!-- bundlecss:vendor [@@autopath] -->
-  <link rel="stylesheet" href="@@autopath/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
 
   <!-- CSS Front Template -->
-  <!-- bundlecss:theme [@@autopath] @@vars.version -->
-  <link rel="stylesheet" href="@@autopath/assets/css/theme.css">
+  <link rel="stylesheet" href="./assets/css/theme.min.css">
 </head>
 
 <body>
@@ -35,7 +33,7 @@
             <div class="row justify-content-lg-between">
               <div class="col-sm order-2 order-sm-1 mb-3">
                 <div class="mb-2">
-                  <img class="avatar" src="@@autopath/assets/svg/logos/logo-short.svg" alt="Logo">
+                  <img class="avatar" src="./assets/svg/logos/logo-short.svg" alt="Logo">
                 </div>
 
                 <h1 class="h2 text-primary">Front Inc.</h1>
@@ -172,11 +170,10 @@
   </main>
   <!-- ========== END MAIN CONTENT ========== -->
 
-  <!-- JS Global Compulsory @@deleteLine:build -->
-  <script src="@@autopath/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS Global Compulsory  -->
+  <script src="./assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- JS Front -->
-  <!-- bundlejs:theme [@@autopath] -->
-  <script src="@@autopath/assets/js/hs.core.js"></script>
+  <script src="./assets/js/theme.min.js"></script>
 </body>
 </html>

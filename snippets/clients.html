@@ -9,34 +9,381 @@
   <title>Clients - Snippets | Front - Multipurpose Responsive Template</title>
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="@@autopath/favicon.ico">
+  <link rel="shortcut icon" href="../favicon.ico">
 
   <!-- Font -->
-  <link href="@@vars.themeFont" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- CSS Implementing Plugins -->
-  <!-- bundlecss:vendor [@@autopath] -->
-  <link rel="stylesheet" href="@@autopath/node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
 
   <!-- CSS Front Template -->
-  <!-- bundlecss:theme [@@autopath] @@vars.version -->
-  <link rel="stylesheet" href="@@autopath/assets/css/theme.css">
-  <link rel="stylesheet" href="@@autopath/assets/css/snippets.css">
-  <link rel="stylesheet" href="@@autopath/node_modules/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../assets/css/theme.min.css">
+  <link rel="stylesheet" href="../assets/css/snippets.min.css">
+  <link rel="stylesheet" href="../assets/vendor/swiper/swiper-bundle.min.css">
 </head>
 
 <body class="navbar-sidebar-aside-lg">
   <!-- ========== HEADER ========== -->
-  @@include("@@autopath/partials/docs/snippets-navbar.html")
+  <header id="header" class="navbar navbar-expand navbar-fixed navbar-end navbar-light navbar-sticky-lg-top bg-white">
+    <div class="container-fluid">
+      <nav class="navbar-nav-wrap">
+        <div class="row flex-grow-1">
+          <!-- Default Logo -->
+          <div class="docs-navbar-sidebar-container d-flex align-items-center mb-2 mb-lg-0">
+            <a class="navbar-brand" href="../snippets/index.html" aria-label="Space">
+              <img class="navbar-brand-logo" src="../assets/svg/logos/logo.svg" alt="Logo">
+            </a>
+            <a href="../documentation/changelog.html">
+              <span class="badge bg-soft-primary text-primary">v4.3.1</span>
+            </a>
+          </div>
+          <!-- End Default Logo -->
+
+          <div class="col-md px-lg-0">
+            <div class="d-flex justify-content-between align-items-center px-lg-5 px-xl-10">
+              <div class="d-none d-md-block">
+                <!-- Search Form -->
+                <form id="snippetsSearch" class="position-relative"
+                      data-hs-list-options='{
+                       "searchMenu": true,
+                       "keyboard": true,
+                       "item": "searchTemplate",
+                       "valueNames": ["component", "category", {"name": "link", "attr": "href"}],
+                       "empty": "#searchNoResults"
+                     }'>
+                  <!-- Input Group -->
+                  <div class="input-group input-group-merge navbar-input-group">
+                    <div class="input-group-prepend input-group-text">
+                      <i class="bi-search"></i>
+                    </div>
+
+                    <input type="search" class="search form-control form-control-sm" placeholder="Search in snippets" aria-label="Search in snippets">
+
+                    <a class="input-group-append input-group-text" href="javascript:;">
+                      <i id="clearSearchResultsIcon" class="bi-x" style="display: none;"></i>
+                    </a>
+                  </div>
+                  <!-- End Input Group -->
+
+                  <!-- List -->
+                  <div class="list dropdown-menu w-100 overflow-auto" style="max-height: 16rem;"></div>
+                  <!-- End List -->
+
+                  <!-- Empty -->
+                  <div id="searchNoResults" style="display: none;">
+                    <div class="text-center p-4">
+                      <img class="mb-3" src="../assets/svg/illustrations/oc-error.svg" alt="Image Description" style="width: 10rem;">
+                      <p class="mb-0">No Results</p>
+                    </div>
+                  </div>
+                  <!-- End Empty -->
+                </form>
+                <!-- End Search Form -->
+
+                <!-- List Item Template -->
+                <div class="d-none">
+                  <div id="searchTemplate" class="dropdown-item">
+                    <a class="d-block link" href="#">
+                      <span class="category d-block fw-normal text-muted mb-1"></span>
+                      <span class="component text-dark"></span>
+                    </a>
+                  </div>
+                </div>
+                <!-- End List Item Template -->
+              </div>
+
+              <!-- Navbar -->
+              <ul class="navbar-nav p-0">
+                <li class="nav-item">
+                  <a class="btn btn-ghost-secondary btn-sm" href="https://htmlstream.com/contact-us" target="_blank">
+                    Get Support <i class="bi-box-arrow-up-right ms-1"></i>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-primary btn-sm" href="../index.html">
+                    <i class="bi-eye me-1"></i> Preview Demo
+                  </a>
+                </li>
+              </ul>
+              <!-- End Navbar -->
+            </div>
+          </div>
+          <!-- End Col -->
+        </div>
+        <!-- End Row -->
+      </nav>
+    </div>
+  </header>
   <!-- ========== END HEADER ========== -->
 
   <!-- ========== MAIN CONTENT ========== -->
   <main id="content" role="main">
     <!-- Navbar -->
-    @@include("@@autopath/partials/docs/snippets-sidebar.html", {
-      "category": "",
-      "link": "clients.html"
-    })
+    <nav class="js-nav-scroller navbar navbar-expand-lg navbar-sidebar navbar-vertical navbar-light bg-white border-end"
+          data-hs-nav-scroller-options='{
+            "type": "vertical",
+            "target": ".navbar-nav .active",
+            "offset": 80
+           }'>
+      <!-- Navbar Toggle -->
+      <button type="button" class="navbar-toggler btn btn-white d-grid w-100" data-bs-toggle="collapse" data-bs-target="#navbarVerticalNavMenu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbarVerticalNavMenu">
+        <span class="d-flex justify-content-between align-items-center">
+          <span class="h6 mb-0">Nav menu</span>
+
+          <span class="navbar-toggler-default">
+            <i class="bi-list"></i>
+          </span>
+
+          <span class="navbar-toggler-toggled">
+            <i class="bi-x"></i>
+          </span>
+        </span>
+      </button>
+      <!-- End Navbar Toggle -->
+
+      <!-- Navbar Collapse -->
+      <div id="navbarVerticalNavMenu" class="collapse navbar-collapse">
+        <div class="navbar-brand-wrapper border-end" style="height: auto;">
+          <!-- Default Logo -->
+          <div class="d-flex align-items-center mb-3">
+            <a class="navbar-brand" href="../snippets/index.html" aria-label="Space">
+              <img class="navbar-brand-logo" src="../assets/svg/logos/logo.svg" alt="Logo">
+            </a>
+            <a class="navbar-brand-badge" href="../documentation/changelog.html">
+              <span class="badge bg-soft-primary text-primary ms-2">v4.3.1</span>
+            </a>
+          </div>
+          <!-- End Default Logo -->
+      
+          <!-- Nav -->
+          <ul class="nav nav-segment nav-fill nav-justified">
+            <li class="nav-item">
+              <a class="nav-link" href="../documentation/index.html">Docs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="../snippets/index.html">Snippets</a>
+            </li>
+          </ul>
+          <!-- End Nav -->
+        </div>
+
+        <div class="docs-navbar-sidebar-aside-body navbar-sidebar-aside-body">
+          <ul id="navbarSettings" class="navbar-nav nav nav-vertical nav-tabs nav-tabs-borderless nav-sm">
+            <li class="nav-item">
+              <span class="nav-subtitle">Snippets</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/index.html">Introduction</a>
+            </li>
+
+            <li class="nav-item my-2 my-lg-5"></li>
+        
+            <li class="nav-item">
+              <span class="nav-subtitle">Navbar / Heroes</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/navbar.html">Headers (Navbar)</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/hero-sections.html">Hero Sections</a>
+            </li>
+
+            <li class="nav-item my-2 my-lg-5"></li>
+
+            <li class="nav-item">
+              <span class="nav-subtitle">Content</span>
+            </li>
+
+            <li class="nav-item ">
+              <a class="nav-link dropdown-toggle" href="#snippetsSidebarNavFeaturesCollapse" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="snippetsSidebarNavFeaturesCollapse">Features</a>
+
+              <div id="snippetsSidebarNavFeaturesCollapse" class="nav-collapse collapse ">
+                <a class="nav-link " href="features-general.html">General</a>
+                <a class="nav-link " href="features-stats.html">Stats</a>
+                <a class="nav-link " href="features-step.html">Step</a>
+                <a class="nav-link " href="features-navs.html">Navs (Tabs)</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/icon-blocks.html">Icon Blocks</a>
+            </li>
+
+            <li class="nav-item ">
+              <a class="nav-link dropdown-toggle" href="#snippetsSidebarNavCardsCollapse" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="snippetsSidebarNavCardsCollapse">Cards</a>
+
+              <div id="snippetsSidebarNavCardsCollapse" class="nav-collapse collapse ">
+                <a class="nav-link " href="cards-grid.html">Grid</a>
+                <a class="nav-link " href="cards-list.html">List</a>
+              </div>
+            </li>
+
+            <li class="nav-item ">
+              <a class="nav-link dropdown-toggle" href="#snippetsSidebarNavDirectoryCollapse" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="snippetsSidebarNavDirectoryCollapse">Directory</a>
+
+              <div id="snippetsSidebarNavDirectoryCollapse" class="nav-collapse collapse ">
+                <a class="nav-link " href="directory-grid.html">Grid</a>
+                <a class="nav-link " href="directory-list.html">List</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/testimonials.html">Testimonials</a>
+            </li>
+
+            <li class="nav-item ">
+              <a class="nav-link dropdown-toggle" href="#snippetsSidebarNavBlogsCollapse" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="snippetsSidebarNavBlogsCollapse">Blogs</a>
+
+              <div id="snippetsSidebarNavBlogsCollapse" class="nav-collapse collapse ">
+                <a class="nav-link " href="blogs-grid.html">Grid</a>
+                <a class="nav-link " href="blogs-list.html">List</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/tables.html">Tables</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/ecommerce.html">E-commerce</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/pricing.html">Pricing</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/team-sections.html">Team Sections</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/breadcrumb.html">Breadcrumb</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/cta.html">Call-to-Action (CTA)</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/modals.html">Modals</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/portfolio.html">Portfolio</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/gallery.html">Gallery</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link active" href="../snippets/clients.html">Clients</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/countdown.html">Countdown</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/faq.html">FAQ</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/lists.html">Lists</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/collapse-accordion.html">Collapse/Accordion</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/comments.html">Comments</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/feedback-and-reviews.html">Feedback &amp; Reviews</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/user-profile.html">User Profile</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="sidebar-examples.html">Sidebar Examples</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="calendar-view.html">Calendar View</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="notification.html">Notification</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="content-sections.html">Content Sections</a>
+            </li>
+
+            <li class="nav-item my-2 my-lg-5"></li>
+
+            <li class="nav-item">
+              <small class="nav-subtitle">Forms</small>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="forms-authentication.html">Authentication</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="forms-feedback.html">Feedback</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="forms-filters.html">Filters</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="forms-search.html">Search</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="forms-directory.html">Directory</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="forms-subscribe.html">Subscribe</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="forms-account.html">Account</a>
+            </li>
+        
+            <li class="nav-item">
+              <a class="nav-link " href="forms-wizard-and-steps.html">Wizard &amp; Steps</a>
+            </li>
+
+            <li class="nav-item my-2 my-lg-5"></li>
+
+            <li class="nav-item">
+              <small class="nav-subtitle">Contact / Footer</small>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/contact-sections.html">Contact Sections</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link " href="../snippets/footer.html">Footer</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- End Navbar Collapse -->
+    </nav>
     <!-- End Navbar -->
 
     <!-- Content -->
@@ -100,47 +447,47 @@
                 <div class="col-md-8 pt-7">
                   <div class="row">
                     <div class="col-4 py-3">
-                      <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/amazon-gray.svg" alt="Logo">
+                      <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/amazon-gray.svg" alt="Logo">
                     </div>
                     <!-- End Col -->
 
                     <div class="col-4 py-3">
-                      <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/kaplan-gray.svg" alt="Logo">
+                      <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/kaplan-gray.svg" alt="Logo">
                     </div>
                     <!-- End Col -->
 
                     <div class="col-4 py-3">
-                      <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/embark-gray.svg" alt="Logo">
+                      <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/embark-gray.svg" alt="Logo">
                     </div>
                     <!-- End Col -->
 
                     <div class="col-4 py-3">
-                      <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/google-gray.svg" alt="Logo">
+                      <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/google-gray.svg" alt="Logo">
                     </div>
                     <!-- End Col -->
 
                     <div class="col-4 py-3">
-                      <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/airbnb-gray.svg" alt="Logo">
+                      <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/airbnb-gray.svg" alt="Logo">
                     </div>
                     <!-- End Col -->
 
                     <div class="col-4 py-3">
-                      <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/shopify-gray.svg" alt="Logo">
+                      <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/shopify-gray.svg" alt="Logo">
                     </div>
                     <!-- End Col -->
 
                     <div class="col-4 py-3">
-                      <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/vidados-gray.svg" alt="Logo">
+                      <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/vidados-gray.svg" alt="Logo">
                     </div>
                     <!-- End Col -->
 
                     <div class="col-4 py-3">
-                      <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/capsule-gray.svg" alt="Logo">
+                      <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/capsule-gray.svg" alt="Logo">
                     </div>
                     <!-- End Col -->
 
                     <div class="col-4 py-3">
-                      <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/forbes-gray.svg" alt="Logo">
+                      <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/forbes-gray.svg" alt="Logo">
                     </div>
                     <!-- End Col -->
                   </div>
@@ -179,47 +526,47 @@
                     &lt;div class="col-md-8 pt-7"&gt;
                       &lt;div class="row"&gt;
                         &lt;div class="col-4 py-3"&gt;
-                          &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/amazon-gray.svg" alt="Logo"&gt;
+                          &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/amazon-gray.svg" alt="Logo"&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
 
                         &lt;div class="col-4 py-3"&gt;
-                          &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/kaplan-gray.svg" alt="Logo"&gt;
+                          &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/kaplan-gray.svg" alt="Logo"&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
 
                         &lt;div class="col-4 py-3"&gt;
-                          &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/embark-gray.svg" alt="Logo"&gt;
+                          &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/embark-gray.svg" alt="Logo"&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
 
                         &lt;div class="col-4 py-3"&gt;
-                          &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/google-gray.svg" alt="Logo"&gt;
+                          &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/google-gray.svg" alt="Logo"&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
 
                         &lt;div class="col-4 py-3"&gt;
-                          &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/airbnb-gray.svg" alt="Logo"&gt;
+                          &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/airbnb-gray.svg" alt="Logo"&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
 
                         &lt;div class="col-4 py-3"&gt;
-                          &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/shopify-gray.svg" alt="Logo"&gt;
+                          &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/shopify-gray.svg" alt="Logo"&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
 
                         &lt;div class="col-4 py-3"&gt;
-                          &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/vidados-gray.svg" alt="Logo"&gt;
+                          &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/vidados-gray.svg" alt="Logo"&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
 
                         &lt;div class="col-4 py-3"&gt;
-                          &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/capsule-gray.svg" alt="Logo"&gt;
+                          &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/capsule-gray.svg" alt="Logo"&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
 
                         &lt;div class="col-4 py-3"&gt;
-                          &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/forbes-gray.svg" alt="Logo"&gt;
+                          &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/forbes-gray.svg" alt="Logo"&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
                       &lt;/div&gt;
@@ -274,57 +621,57 @@
 
               <div class="row justify-content-center text-center">
                 <div class="col-4 col-sm-3 col-md-2 py-3">
-                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/amazon-dark.svg" alt="Logo">
+                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/amazon-dark.svg" alt="Logo">
                 </div>
                 <!-- End Col -->
 
                 <div class="col-4 col-sm-3 col-md-2 py-3">
-                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/kaplan-dark.svg" alt="Logo">
+                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/kaplan-dark.svg" alt="Logo">
                 </div>
                 <!-- End Col -->
 
                 <div class="col-4 col-sm-3 col-md-2 py-3">
-                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/google-dark.svg" alt="Logo">
+                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/google-dark.svg" alt="Logo">
                 </div>
                 <!-- End Col -->
 
                 <div class="col-4 col-sm-3 col-md-2 py-3">
-                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/airbnb-dark.svg" alt="Logo">
+                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/airbnb-dark.svg" alt="Logo">
                 </div>
                 <!-- End Col -->
 
                 <div class="col-4 col-sm-3 col-md-2 py-3">
-                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/shopify-dark.svg" alt="Logo">
+                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/shopify-dark.svg" alt="Logo">
                 </div>
                 <!-- End Col -->
 
                 <div class="col-4 col-sm-3 col-md-2 py-3">
-                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/vidados-dark.svg" alt="Logo">
+                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/vidados-dark.svg" alt="Logo">
                 </div>
                 <!-- End Col -->
 
                 <div class="col-4 col-sm-3 col-md-2 py-3">
-                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/capsule-dark.svg" alt="Logo">
+                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/capsule-dark.svg" alt="Logo">
                 </div>
                 <!-- End Col -->
 
                 <div class="col-4 col-sm-3 col-md-2 py-3">
-                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/forbes-dark.svg" alt="Logo">
+                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/forbes-dark.svg" alt="Logo">
                 </div>
                 <!-- End Col -->
 
                 <div class="col-4 col-sm-3 col-md-2 py-3">
-                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/business-insider-dark.svg" alt="Logo">
+                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/business-insider-dark.svg" alt="Logo">
                 </div>
                 <!-- End Col -->
 
                 <div class="col-4 col-sm-3 col-md-2 py-3">
-                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/hubspot-dark.svg" alt="Logo">
+                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/hubspot-dark.svg" alt="Logo">
                 </div>
                 <!-- End Col -->
 
                 <div class="col-4 col-sm-3 col-md-2 py-3">
-                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/layar-dark.svg" alt="Logo">
+                  <img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/layar-dark.svg" alt="Logo">
                 </div>
                 <!-- End Col -->
               </div>
@@ -346,57 +693,57 @@
 
                   &lt;div class="row justify-content-center text-center"&gt;
                     &lt;div class="col-4 col-sm-3 col-md-2 py-3"&gt;
-                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/amazon-dark.svg" alt="Logo"&gt;
+                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/amazon-dark.svg" alt="Logo"&gt;
                     &lt;/div&gt;
                     &lt;!-- End Col --&gt;
 
                     &lt;div class="col-4 col-sm-3 col-md-2 py-3"&gt;
-                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/kaplan-dark.svg" alt="Logo"&gt;
+                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/kaplan-dark.svg" alt="Logo"&gt;
                     &lt;/div&gt;
                     &lt;!-- End Col --&gt;
 
                     &lt;div class="col-4 col-sm-3 col-md-2 py-3"&gt;
-                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/google-dark.svg" alt="Logo"&gt;
+                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/google-dark.svg" alt="Logo"&gt;
                     &lt;/div&gt;
                     &lt;!-- End Col --&gt;
 
                     &lt;div class="col-4 col-sm-3 col-md-2 py-3"&gt;
-                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/airbnb-dark.svg" alt="Logo"&gt;
+                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/airbnb-dark.svg" alt="Logo"&gt;
                     &lt;/div&gt;
                     &lt;!-- End Col --&gt;
 
                     &lt;div class="col-4 col-sm-3 col-md-2 py-3"&gt;
-                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/shopify-dark.svg" alt="Logo"&gt;
+                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/shopify-dark.svg" alt="Logo"&gt;
                     &lt;/div&gt;
                     &lt;!-- End Col --&gt;
 
                     &lt;div class="col-4 col-sm-3 col-md-2 py-3"&gt;
-                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/vidados-dark.svg" alt="Logo"&gt;
+                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/vidados-dark.svg" alt="Logo"&gt;
                     &lt;/div&gt;
                     &lt;!-- End Col --&gt;
 
                     &lt;div class="col-4 col-sm-3 col-md-2 py-3"&gt;
-                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/capsule-dark.svg" alt="Logo"&gt;
+                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/capsule-dark.svg" alt="Logo"&gt;
                     &lt;/div&gt;
                     &lt;!-- End Col --&gt;
 
                     &lt;div class="col-4 col-sm-3 col-md-2 py-3"&gt;
-                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/forbes-dark.svg" alt="Logo"&gt;
+                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/forbes-dark.svg" alt="Logo"&gt;
                     &lt;/div&gt;
                     &lt;!-- End Col --&gt;
 
                     &lt;div class="col-4 col-sm-3 col-md-2 py-3"&gt;
-                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/business-insider-dark.svg" alt="Logo"&gt;
+                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/business-insider-dark.svg" alt="Logo"&gt;
                     &lt;/div&gt;
                     &lt;!-- End Col --&gt;
 
                     &lt;div class="col-4 col-sm-3 col-md-2 py-3"&gt;
-                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/hubspot-dark.svg" alt="Logo"&gt;
+                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/hubspot-dark.svg" alt="Logo"&gt;
                     &lt;/div&gt;
                     &lt;!-- End Col --&gt;
 
                     &lt;div class="col-4 col-sm-3 col-md-2 py-3"&gt;
-                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="@@autopath/assets/svg/brands/layar-dark.svg" alt="Logo"&gt;
+                      &lt;img class="avatar avatar-lg avatar-4x3 avatar-centered" src="../assets/svg/brands/layar-dark.svg" alt="Logo"&gt;
                     &lt;/div&gt;
                     &lt;!-- End Col --&gt;
                   &lt;/div&gt;
@@ -444,21 +791,21 @@
                   <div class="row justify-content-center">
                     <div class="col-3 my-4">
                       <div class="d-none d-md-block avatar avatar-xl rounded-circle shadow-sm p-4 mx-auto">
-                        <img class="avatar-img" src="@@autopath/assets/svg/brands/google-icon.svg" alt="Logo">
+                        <img class="avatar-img" src="../assets/svg/brands/google-icon.svg" alt="Logo">
                       </div>
                     </div>
                     <!-- End Col -->
                     
                     <div class="col-3 mb-4">
                       <div class="d-block avatar avatar-xl rounded-circle shadow-sm p-4 mx-auto">
-                        <img class="avatar-img" src="@@autopath/assets/svg/brands/atlassian-icon.svg" alt="Logo">
+                        <img class="avatar-img" src="../assets/svg/brands/atlassian-icon.svg" alt="Logo">
                       </div>
                     </div>
                     <!-- End Col -->
                     
                     <div class="col-3 my-4">
                       <div class="d-none d-md-block avatar avatar-xl rounded-circle shadow-sm p-4 mx-auto">
-                        <img class="avatar-img" src="@@autopath/assets/svg/brands/asana-icon.svg" alt="Logo">
+                        <img class="avatar-img" src="../assets/svg/brands/asana-icon.svg" alt="Logo">
                       </div>
                     </div>
                     <!-- End Col -->
@@ -468,14 +815,14 @@
                   <div class="row justify-content-between">
                     <div class="col-3 mb-4">
                       <div class="d-block avatar avatar-xl rounded-circle shadow-sm p-4">
-                        <img class="avatar-img" src="@@autopath/assets/svg/brands/slack-icon.svg" alt="Logo">
+                        <img class="avatar-img" src="../assets/svg/brands/slack-icon.svg" alt="Logo">
                       </div>
                     </div>
                     <!-- End Col -->
                     
                     <div class="col-3 my-4">
                       <div class="d-block avatar avatar-xl rounded-circle shadow-sm p-4 ms-auto">
-                        <img class="avatar-img" src="@@autopath/assets/svg/brands/spotify-icon.svg" alt="Logo">
+                        <img class="avatar-img" src="../assets/svg/brands/spotify-icon.svg" alt="Logo">
                       </div>
                     </div>
                     <!-- End Col -->
@@ -485,14 +832,14 @@
                   <div class="row">
                     <div class="col-3 offset-1 my-4">
                       <div class="d-none d-md-block avatar avatar-xl rounded-circle shadow-sm p-4 ms-auto">
-                        <img class="avatar-img" src="@@autopath/assets/svg/brands/paypal-icon.svg" alt="Logo">
+                        <img class="avatar-img" src="../assets/svg/brands/paypal-icon.svg" alt="Logo">
                       </div>
                     </div>
                     <!-- End Col -->
                     
                     <div class="col-3 offset-2 my-4">
                       <div class="d-none d-md-block avatar avatar-xl rounded-circle shadow-sm p-4 ms-auto">
-                        <img class="avatar-img" src="@@autopath/assets/svg/brands/dropbox-icon.svg" alt="Logo">
+                        <img class="avatar-img" src="../assets/svg/brands/dropbox-icon.svg" alt="Logo">
                       </div>
                     </div>
                     <!-- End Col -->
@@ -502,21 +849,21 @@
                   <div class="row justify-content-between">
                     <div class="col-4">
                       <div class="d-block avatar avatar-xl rounded-circle shadow-sm p-4 mx-auto">
-                        <img class="avatar-img" src="@@autopath/assets/svg/brands/airbnb-icon.svg" alt="Logo">
+                        <img class="avatar-img" src="../assets/svg/brands/airbnb-icon.svg" alt="Logo">
                       </div>
                     </div>
                     <!-- End Col -->
                     
                     <div class="col-4 mt-6">
                       <div class="d-none d-sm-block avatar avatar-xl rounded-circle shadow-sm p-4 mx-auto">
-                        <img class="avatar-img" src="@@autopath/assets/svg/brands/behance-icon.svg" alt="Logo">
+                        <img class="avatar-img" src="../assets/svg/brands/behance-icon.svg" alt="Logo">
                       </div>
                     </div>
                     <!-- End Col -->
                     
                     <div class="col-4 mt-6">
                       <div class="d-block avatar avatar-xl rounded-circle shadow-sm p-4 mx-auto">
-                        <img class="avatar-img" src="@@autopath/assets/svg/brands/dribbble-icon.svg" alt="Logo">
+                        <img class="avatar-img" src="../assets/svg/brands/dribbble-icon.svg" alt="Logo">
                       </div>
                     </div>
                     <!-- End Col -->
@@ -550,21 +897,21 @@
                       &lt;div class="row justify-content-center"&gt;
                         &lt;div class="col-3 my-4"&gt;
                           &lt;div class="d-none d-md-block avatar avatar-xl rounded-circle shadow-sm p-4 mx-auto"&gt;
-                            &lt;img class="avatar-img" src="@@autopath/assets/svg/brands/google-icon.svg" alt="Logo"&gt;
+                            &lt;img class="avatar-img" src="../assets/svg/brands/google-icon.svg" alt="Logo"&gt;
                           &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
                         
                         &lt;div class="col-3 mb-4"&gt;
                           &lt;div class="d-block avatar avatar-xl rounded-circle shadow-sm p-4 mx-auto"&gt;
-                            &lt;img class="avatar-img" src="@@autopath/assets/svg/brands/atlassian-icon.svg" alt="Logo"&gt;
+                            &lt;img class="avatar-img" src="../assets/svg/brands/atlassian-icon.svg" alt="Logo"&gt;
                           &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
                         
                         &lt;div class="col-3 my-4"&gt;
                           &lt;div class="d-none d-md-block avatar avatar-xl rounded-circle shadow-sm p-4 mx-auto"&gt;
-                            &lt;img class="avatar-img" src="@@autopath/assets/svg/brands/asana-icon.svg" alt="Logo"&gt;
+                            &lt;img class="avatar-img" src="../assets/svg/brands/asana-icon.svg" alt="Logo"&gt;
                           &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
@@ -574,14 +921,14 @@
                       &lt;div class="row justify-content-between"&gt;
                         &lt;div class="col-3 mb-4"&gt;
                           &lt;div class="d-block avatar avatar-xl rounded-circle shadow-sm p-4"&gt;
-                            &lt;img class="avatar-img" src="@@autopath/assets/svg/brands/slack-icon.svg" alt="Logo"&gt;
+                            &lt;img class="avatar-img" src="../assets/svg/brands/slack-icon.svg" alt="Logo"&gt;
                           &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
                         
                         &lt;div class="col-3 my-4"&gt;
                           &lt;div class="d-block avatar avatar-xl rounded-circle shadow-sm p-4 ms-auto"&gt;
-                            &lt;img class="avatar-img" src="@@autopath/assets/svg/brands/spotify-icon.svg" alt="Logo"&gt;
+                            &lt;img class="avatar-img" src="../assets/svg/brands/spotify-icon.svg" alt="Logo"&gt;
                           &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
@@ -591,14 +938,14 @@
                       &lt;div class="row"&gt;
                         &lt;div class="col-3 offset-1 my-4"&gt;
                           &lt;div class="d-none d-md-block avatar avatar-xl rounded-circle shadow-sm p-4 ms-auto"&gt;
-                            &lt;img class="avatar-img" src="@@autopath/assets/svg/brands/paypal-icon.svg" alt="Logo"&gt;
+                            &lt;img class="avatar-img" src="../assets/svg/brands/paypal-icon.svg" alt="Logo"&gt;
                           &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
                         
                         &lt;div class="col-3 offset-2 my-4"&gt;
                           &lt;div class="d-none d-md-block avatar avatar-xl rounded-circle shadow-sm p-4 ms-auto"&gt;
-                            &lt;img class="avatar-img" src="@@autopath/assets/svg/brands/dropbox-icon.svg" alt="Logo"&gt;
+                            &lt;img class="avatar-img" src="../assets/svg/brands/dropbox-icon.svg" alt="Logo"&gt;
                           &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
@@ -608,21 +955,21 @@
                       &lt;div class="row justify-content-between"&gt;
                         &lt;div class="col-4"&gt;
                           &lt;div class="d-block avatar avatar-xl rounded-circle shadow-sm p-4 mx-auto"&gt;
-                            &lt;img class="avatar-img" src="@@autopath/assets/svg/brands/airbnb-icon.svg" alt="Logo"&gt;
+                            &lt;img class="avatar-img" src="../assets/svg/brands/airbnb-icon.svg" alt="Logo"&gt;
                           &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
                         
                         &lt;div class="col-4 mt-6"&gt;
                           &lt;div class="d-none d-sm-block avatar avatar-xl rounded-circle shadow-sm p-4 mx-auto"&gt;
-                            &lt;img class="avatar-img" src="@@autopath/assets/svg/brands/behance-icon.svg" alt="Logo"&gt;
+                            &lt;img class="avatar-img" src="../assets/svg/brands/behance-icon.svg" alt="Logo"&gt;
                           &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
                         
                         &lt;div class="col-4 mt-6"&gt;
                           &lt;div class="d-block avatar avatar-xl rounded-circle shadow-sm p-4 mx-auto"&gt;
-                            &lt;img class="avatar-img" src="@@autopath/assets/svg/brands/dribbble-icon.svg" alt="Logo"&gt;
+                            &lt;img class="avatar-img" src="../assets/svg/brands/dribbble-icon.svg" alt="Logo"&gt;
                           &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
@@ -690,27 +1037,27 @@
               <div class="js-swiper-clients swiper text-center">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/fitbit-dark.svg" alt="Logo">
+                    <img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/fitbit-dark.svg" alt="Logo">
                   </div>
                   <!-- End Slide -->
 
                   <div class="swiper-slide">
-                    <img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/forbes-dark.svg" alt="Logo">
+                    <img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/forbes-dark.svg" alt="Logo">
                   </div>
                   <!-- End Slide -->
 
                   <div class="swiper-slide">
-                    <img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/mailchimp-dark.svg" alt="Logo">
+                    <img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/mailchimp-dark.svg" alt="Logo">
                   </div>
                   <!-- End Slide -->
 
                   <div class="swiper-slide">
-                    <img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/layar-dark.svg" alt="Logo">
+                    <img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/layar-dark.svg" alt="Logo">
                   </div>
                   <!-- End Slide -->
 
                   <div class="swiper-slide">
-                    <img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/hubspot-dark.svg" alt="Logo">
+                    <img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/hubspot-dark.svg" alt="Logo">
                   </div>
                   <!-- End Slide -->
                 </div>
@@ -729,27 +1076,27 @@
                   &lt;div class="js-swiper-clients swiper text-center"&gt;
                     &lt;div class="swiper-wrapper"&gt;
                       &lt;div class="swiper-slide"&gt;
-                        &lt;img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/fitbit-dark.svg" alt="Logo"&gt;
+                        &lt;img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/fitbit-dark.svg" alt="Logo"&gt;
                       &lt;/div&gt;
                       &lt;!-- End Slide --&gt;
 
                       &lt;div class="swiper-slide"&gt;
-                        &lt;img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/forbes-dark.svg" alt="Logo"&gt;
+                        &lt;img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/forbes-dark.svg" alt="Logo"&gt;
                       &lt;/div&gt;
                       &lt;!-- End Slide --&gt;
 
                       &lt;div class="swiper-slide"&gt;
-                        &lt;img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/mailchimp-dark.svg" alt="Logo"&gt;
+                        &lt;img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/mailchimp-dark.svg" alt="Logo"&gt;
                       &lt;/div&gt;
                       &lt;!-- End Slide --&gt;
 
                       &lt;div class="swiper-slide"&gt;
-                        &lt;img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/layar-dark.svg" alt="Logo"&gt;
+                        &lt;img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/layar-dark.svg" alt="Logo"&gt;
                       &lt;/div&gt;
                       &lt;!-- End Slide --&gt;
 
                       &lt;div class="swiper-slide"&gt;
-                        &lt;img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/hubspot-dark.svg" alt="Logo"&gt;
+                        &lt;img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/hubspot-dark.svg" alt="Logo"&gt;
                       &lt;/div&gt;
                       &lt;!-- End Slide --&gt;
                     &lt;/div&gt;
@@ -764,7 +1111,7 @@
           <div class="tab-pane fade" id="nav-css4" role="tabpanel" aria-labelledby="nav-cssTab4">
             <pre>
               <code class="language-markup" data-lang="html">
-                &lt;link rel="stylesheet" href="@@autopath/node_modules/swiper/swiper-bundle.min.css"&gt;
+                &lt;link rel="stylesheet" href="../assets/vendor/swiper/swiper-bundle.min.css"&gt;
               </code>
             </pre>
           </div>
@@ -773,7 +1120,7 @@
             <pre>
               <code class="language-markup" data-lang="html">
                 &lt;!-- JS Implementing Plugins --&gt;
-                &lt;script src="@@autopath/node_modules/swiper/swiper-bundle.min.js"&gt;&lt;/script&gt;
+                &lt;script src="../assets/vendor/swiper/swiper-bundle.min.js"&gt;&lt;/script&gt;
 
                 &lt;!-- JS Plugins Init. --&gt;
                 &lt;script&gt;
@@ -839,27 +1186,27 @@
                 <div class="col-md-7 col-lg-8 mb-5 mb-md-0">
                   <div class="row">
                     <div class="col text-center py-3">
-                      <img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/capsule-dark.svg" alt="Logo">
+                      <img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/capsule-dark.svg" alt="Logo">
                     </div>
                     <!-- End Col -->
 
                     <div class="col text-center py-3">
-                      <img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/fitbit-dark.svg" alt="Logo">
+                      <img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/fitbit-dark.svg" alt="Logo">
                     </div>
                     <!-- End Col -->
 
                     <div class="col text-center py-3">
-                      <img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/forbes-dark.svg" alt="Logo">
+                      <img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/forbes-dark.svg" alt="Logo">
                     </div>
                     <!-- End Col -->
 
                     <div class="col text-center py-3">
-                      <img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/mailchimp-dark.svg" alt="Logo">
+                      <img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/mailchimp-dark.svg" alt="Logo">
                     </div>
                     <!-- End Col -->
 
                     <div class="col text-center py-3">
-                      <img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/airbnb-dark.svg" alt="Logo">
+                      <img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/airbnb-dark.svg" alt="Logo">
                     </div>
                     <!-- End Col -->
                   </div>
@@ -886,27 +1233,27 @@
                     &lt;div class="col-md-7 col-lg-8 mb-5 mb-md-0"&gt;
                       &lt;div class="row"&gt;
                         &lt;div class="col text-center py-3"&gt;
-                          &lt;img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/capsule-dark.svg" alt="Logo"&gt;
+                          &lt;img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/capsule-dark.svg" alt="Logo"&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
 
                         &lt;div class="col text-center py-3"&gt;
-                          &lt;img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/fitbit-dark.svg" alt="Logo"&gt;
+                          &lt;img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/fitbit-dark.svg" alt="Logo"&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
 
                         &lt;div class="col text-center py-3"&gt;
-                          &lt;img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/forbes-dark.svg" alt="Logo"&gt;
+                          &lt;img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/forbes-dark.svg" alt="Logo"&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
 
                         &lt;div class="col text-center py-3"&gt;
-                          &lt;img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/mailchimp-dark.svg" alt="Logo"&gt;
+                          &lt;img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/mailchimp-dark.svg" alt="Logo"&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
 
                         &lt;div class="col text-center py-3"&gt;
-                          &lt;img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/airbnb-dark.svg" alt="Logo"&gt;
+                          &lt;img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/airbnb-dark.svg" alt="Logo"&gt;
                         &lt;/div&gt;
                         &lt;!-- End Col --&gt;
                       &lt;/div&gt;
@@ -960,32 +1307,32 @@
             <div class="container">
               <div class="row">
                 <div class="col text-center py-3">
-                  <img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/hollister-dark.svg" alt="Logo">
+                  <img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/hollister-dark.svg" alt="Logo">
                 </div>
                 <!-- End Col -->
 
                 <div class="col text-center py-3">
-                  <img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/levis-dark.svg" alt="Logo">
+                  <img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/levis-dark.svg" alt="Logo">
                 </div>
                 <!-- End Col -->
 
                 <div class="col text-center py-3">
-                  <img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/new-balance-dark.svg" alt="Logo">
+                  <img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/new-balance-dark.svg" alt="Logo">
                 </div>
                 <!-- End Col -->
 
                 <div class="col text-center py-3">
-                  <img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/puma-dark.svg" alt="Logo">
+                  <img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/puma-dark.svg" alt="Logo">
                 </div>
                 <!-- End Col -->
 
                 <div class="col text-center py-3">
-                  <img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/nike-dark.svg" alt="Logo">
+                  <img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/nike-dark.svg" alt="Logo">
                 </div>
                 <!-- End Col -->
 
                 <div class="col text-center py-3">
-                  <img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/tnf-dark.svg" alt="Logo">
+                  <img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/tnf-dark.svg" alt="Logo">
                 </div>
                 <!-- End Col -->
               </div>
@@ -1001,32 +1348,32 @@
                 &lt;div class="container content-space-2"&gt;
                   &lt;div class="row"&gt;
                     &lt;div class="col text-center py-3"&gt;
-                      &lt;img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/hollister-dark.svg" alt="Logo"&gt;
+                      &lt;img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/hollister-dark.svg" alt="Logo"&gt;
                     &lt;/div&gt;
                     &lt;!-- End Col --&gt;
 
                     &lt;div class="col text-center py-3"&gt;
-                      &lt;img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/levis-dark.svg" alt="Logo"&gt;
+                      &lt;img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/levis-dark.svg" alt="Logo"&gt;
                     &lt;/div&gt;
                     &lt;!-- End Col --&gt;
 
                     &lt;div class="col text-center py-3"&gt;
-                      &lt;img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/new-balance-dark.svg" alt="Logo"&gt;
+                      &lt;img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/new-balance-dark.svg" alt="Logo"&gt;
                     &lt;/div&gt;
                     &lt;!-- End Col --&gt;
 
                     &lt;div class="col text-center py-3"&gt;
-                      &lt;img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/puma-dark.svg" alt="Logo"&gt;
+                      &lt;img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/puma-dark.svg" alt="Logo"&gt;
                     &lt;/div&gt;
                     &lt;!-- End Col --&gt;
 
                     &lt;div class="col text-center py-3"&gt;
-                      &lt;img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/nike-dark.svg" alt="Logo"&gt;
+                      &lt;img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/nike-dark.svg" alt="Logo"&gt;
                     &lt;/div&gt;
                     &lt;!-- End Col --&gt;
 
                     &lt;div class="col text-center py-3"&gt;
-                      &lt;img class="avatar avatar-lg avatar-4x3" src="@@autopath/assets/svg/brands/tnf-dark.svg" alt="Logo"&gt;
+                      &lt;img class="avatar avatar-lg avatar-4x3" src="../assets/svg/brands/tnf-dark.svg" alt="Logo"&gt;
                     &lt;/div&gt;
                     &lt;!-- End Col --&gt;
                   &lt;/div&gt;
@@ -1047,25 +1394,38 @@
 
   <!-- ========== SECONDARY CONTENTS ========== -->
   <!-- Go To -->
-  @@include("@@autopath/partials/layouts-components/go-to.html")
+  <a class="js-go-to go-to position-fixed" href="javascript:;" style="visibility: hidden;"
+     data-hs-go-to-options='{
+       "offsetTop": 700,
+       "position": {
+         "init": {
+           "right": "2rem"
+         },
+         "show": {
+           "bottom": "2rem"
+         },
+         "hide": {
+           "bottom": "-2rem"
+         }
+       }
+     }'>
+    <i class="bi-chevron-up"></i>
+  </a>
   <!-- ========== END SECONDARY CONTENTS ========== -->
 
-  <!-- JS Global Compulsory @@deleteLine:build -->
-  <script src="@@autopath/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS Global Compulsory  -->
+  <script src="../assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- JS Implementing Plugins -->
-  <!-- bundlejs:vendor [@@autopath] -->
-  <script src="@@autopath/assets/vendor/hs-header/dist/hs-header.min.js"></script>
-  <script src="@@autopath/assets/vendor/hs-nav-scroller/dist/hs-nav-scroller.min.js"></script>
-  <script src="@@autopath/node_modules/list.js/dist/list.min.js"></script>
-  <script src="@@autopath/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
-  <script src="@@autopath/assets/vendor/prism/prism.js"></script>
-  <script src="@@autopath/node_modules/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/hs-header/dist/hs-header.min.js"></script>
+  <script src="../assets/vendor/hs-nav-scroller/dist/hs-nav-scroller.min.js"></script>
+  <script src="../assets/vendor/list.js/dist/list.min.js"></script>
+  <script src="../assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
+  <script src="../assets/vendor/prism/prism.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- JS Front -->
-  <!-- bundlejs:theme [@@autopath] -->
-  <script src="@@autopath/assets/js/hs.core.js"></script>
-  <script src="@@autopath/assets/js/hs.list.js"></script>
+  <script src="../assets/js/theme.min.js"></script>
 
   <!-- JS Plugins Init. -->
   <script>
@@ -1091,7 +1451,7 @@
 
       // GET JSON FILE RESULTS
       // =======================================================
-      fetch('@@autopath/assets/json/snippets-search.json')
+      fetch('../assets/json/snippets-search.json')
       .then(response => response.json())
       .then(data => {
         snippetsSearch.add(data)
